@@ -21,7 +21,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "images/MyFigure.jpg"
+  avatar           : "images/MyFigure.png"
   name             : "Wang Haoran"
   pronouns         : # example: "she/her"  
   bio              : "A robot designer and a soccer zealot"
