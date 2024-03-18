@@ -1,16 +1,16 @@
-# main links links
-main:
-  - title: "Publications"
-    url: /publications/
+# # main links links
+# main:
+#   - title: "Publications"
+#     url: /publications/
 
-  - title: "Project"
-    url: /project/    
+#   - title: "Project"
+#     url: /project/    
   
-  - title: "Video Portfolio"
-    url: /portfolio/
+#   - title: "Video Portfolio"
+#     url: /portfolio/
     
-  - title: "CV"
-    url: /cv/
+#   - title: "CV"
+#     url: /cv/
     
-  - title: "Different Sides of Me"
-    url: /markdown/
+#   - title: "Different Sides of Me"
+#     url: /markdown/
