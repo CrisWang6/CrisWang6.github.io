@@ -21,12 +21,12 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "MyFigure.JPG"
   name             : "Wang Haoran"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "A robot designer and a soccer zealot"
   location         : "Shenzhen-China"
-  employer         : "Southern University of Science and Technology"
+  employer         : "SUSTech"
   uri              : # URL
   email            : "12011430@mail.sustech.edu.cn" 
 
