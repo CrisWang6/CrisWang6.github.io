@@ -3,12 +3,9 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Project Experience"
+  - title: "Project"
     url: /project/    
-
-  - title: "Teaching"
-    url: /teaching/    
-    
+  
   - title: "Video Portfolio"
     url: /portfolio/
     
