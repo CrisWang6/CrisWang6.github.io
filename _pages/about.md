@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-![My](Self.png #pic_center =x300)
+![My](“Self.png” #pic_center =x300)
 
 
 
