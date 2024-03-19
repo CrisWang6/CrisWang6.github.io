@@ -16,15 +16,11 @@ width="700
 
 WHO AM I
 ===
-This is the homepage of Wang Haoran(CrisWang), a senior undergraduate student from [Southern University of Science and Technology(SUSTech)](https://www.sustech.edu.cn), major in **Robotics Engineering** and interest in industry design.
+I'm Wang Haoran(CrisWang), a senior undergraduate student from [Southern University of Science and Technology(SUSTech)](https://www.sustech.edu.cn), major in **Robotics Engineering** and interest in industry design.
 
 My research interest includes **on-site application robots** and **exoskeleton robots**.
 
-My Curriculum Vita: [here](../assets/Curriculum_Vitae.pdf).
-
-My research experience and publication are integrated [here]().
-
-And [here]() records some extracurricular activities and the real me.
+My Curriculum Vita: [here](Haoran Wang_NOC_CV.pdf).
 
 Email: 12011430@mail.sustech.edu.cn
 
@@ -74,6 +70,9 @@ Projects
 
 Different Me
 ===
+Shown in the first picture in this page, i'm a outgoing boy and i think everyone's livelihood should be colorful, being an ESFP makes my life full of enthusiasm and power. I am willing to put all of meself into the career i choose.
+
+
 
 Videos
 ===
