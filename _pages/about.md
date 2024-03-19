@@ -7,8 +7,11 @@ redirect_from:
   - /about.html
 ---
 
-![My](“Self.png” #pic_center =x300)
-
+</p align = "center">    
+<img  src=Self.png
+width="700
+" />
+</p>
 
 
 WHO AM I
