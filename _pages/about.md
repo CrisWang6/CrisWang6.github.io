@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-</p align = "center">    
+<p align = "center">    
 <img  src=SelfPage.png
 width="700
 " />
