@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-![](images/MyFigure.png)
+![My ](images/Self.png)
 
 WHO AM I
 ===
