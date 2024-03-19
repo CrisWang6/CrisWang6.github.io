@@ -7,7 +7,13 @@ redirect_from:
   - /about.html
 ---
 
-![My Photo](Self.png)
+![My](Self.png)
+<style>
+    img[alt="My"]{
+        width:100px;
+    }
+</style>
+
 
 WHO AM I
 ===
