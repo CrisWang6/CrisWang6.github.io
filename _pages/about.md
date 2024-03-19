@@ -8,9 +8,7 @@ redirect_from:
 ---
 
 <p align = "center">    
-<img  src=SelfPage.png
-width="700
-" />
+<img  src="SelfPage.png" width="700" />
 </p>
 
 
@@ -36,7 +34,10 @@ Publication
 •	Analyze the results of experiments in both simulation environments and fields. 
 •	Independently publish an essay to **the IEEE International Conference on Robotics and Biomimetics 2023**.
 
-
+<p align = "half">    
+<img  src="SwhegPro3_1.gif" width="328" />
+<img  src="SwhegPro3_2.gif" width="328" />
+</p>
 
 2.[**Ubiquitous Field Transportation Robots with Robust Wheel-Leg Transformable Modules**]()
 ---
@@ -44,6 +45,10 @@ Publication
 •	Design and assemble the Wheel-leg transformable robot SWhegPro3 and test its operating performance.
 •	Analyze the results of experiments in both simulation environments and fields. 
 •	Submmited to **IEEE ACCESS**.
+
+<p align = "center">    
+<img  src="Detailed Mechanism Design of Wheel-Leg Transformable Modules in SWhegPro and SWhegPro3.png" width="700" />
+</p>
 
 3.**Pressure Insole Correction Method Based on Machine Learning Prediction Center of Pressure (In progress)**
 ---
@@ -60,12 +65,20 @@ Projects
 •	Redesign the five-bar parallel robot, integrate the suction cup to the end effector as the manipulator, and then control the end effector to accurately move objects.
 •	Make a video to demonstrate the performance and working principle of the SCARA robot we design.
 
+<p align = "half">    
+<img  src="SCARA robot demo.gif" width="328" />
+<img  src="SCARA robot demo2.gif" width="328" />
+</p>
 
 2.**Mobile Kitchen Waste Classifying Robot**
 ---
 ***Project Member***
 •	Find the pains and needs of the residents living in apartments who are annoyed with waste in their homes.
 •	Designed a user-friendly mobile garbage sorting robot, which is equipped with three-axis robotic arms and sliding rails.
+
+<p align = "center">    
+<img  src= "SDIM_Garbage sorting robot.gif" width="700" />
+</p>
 
 
 Different Me
