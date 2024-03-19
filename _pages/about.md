@@ -7,6 +7,8 @@ redirect_from:
   - /about.html
 ---
 
+![](images/MyFigure.png)
+
 WHO AM I
 ===
 This is the homepage of Wang Haoran(CrisWang), a senior undergraduate student from [Southern University of Science and Technology(SUSTech)](https://www.sustech.edu.cn), major in **Robotics Engineering** and interest in industry design.
