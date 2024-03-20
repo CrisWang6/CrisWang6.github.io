@@ -21,7 +21,7 @@
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "images/MyFigure.png"
+  avatar           : "images/MyFigure.jpg"
   name             : "Wang Haoran"
   pronouns         : # example: "she/her"  
   bio              : "A robot designer and a soccer zealot"
