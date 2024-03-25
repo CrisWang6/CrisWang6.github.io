@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 <p align = "center">    
-<img  src="SelfPage.png" width="700" />
+<img  src=SelfPage.png width="700" />
 </p>
 
 
