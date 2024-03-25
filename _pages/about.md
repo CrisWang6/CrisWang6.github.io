@@ -51,7 +51,7 @@ Publication
 •	Submmited to **IEEE ACCESS**.
 
 
-![Detailed Mechanism](Detailed Mechanism Design of Wheel-Leg Transformable Modules in SWhegPro and SWhegPro3.png)
+![Detailed Mechanism](Detailed_Mechanism.png)
 
 **3. Pressure Insole Correction Method Based on Machine Learning Prediction Center of Pressure (In progress)**
 ---
@@ -74,8 +74,8 @@ Projects
 
 
 
-![SCARA robot demo](SCARA robot demo.gif)
-![SCARA robot demo2](SCARA robot demo2.gif)
+![SCARA robot demo](SCARA_robot_demo.gif)
+![SCARA robot demo2](SCARA_robot_demo2.gif)
 
 **2. Mobile Kitchen Waste Classifying Robot**
 ---
@@ -87,7 +87,7 @@ Projects
 
 
 
-![SDIM_Garbage sorting robot](SDIM_Garbage sorting robot.gif)
+![SDIM_Garbage sorting robot](SDIM_Garbage_sorting_robot.gif)
 
 Different Me
 ===
