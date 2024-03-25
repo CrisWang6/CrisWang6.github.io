@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 <p align = "center">    
-<img  src="Self.png" width="700" />
+<img  src="[Self.png](https://github.com/CrisWang6/CrisWang6.github.io/blob/7b7c0344e1b89e90b1addf3d4b78facd296746be/_pages/Self.png)" width="700" />
 </p>
 
 
