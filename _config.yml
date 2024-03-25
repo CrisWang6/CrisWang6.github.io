@@ -21,7 +21,7 @@ repository               : "CrisWang6/criswang6.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "_pages/MyFigure.JPG"
+  avatar           : "MyFigure.JPG"
   name             : "Wang Haoran"
   pronouns         : # example: "she/her"  
   bio              : "A robot designer and a soccer zealot"
