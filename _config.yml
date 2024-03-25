@@ -12,7 +12,7 @@ title                    : "CrisWang's Home"
 title_separator          : "-"
 name                     : &name "Wang Haoran"
 description              : &description "personal description"
-url                      : https://criswang6.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://criswang6.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "CrisWang6/criswang6.github.io"
 
@@ -21,7 +21,7 @@ repository               : "CrisWang6/criswang6.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "https://github.com/CrisWang6/CrisWang6.github.io/blob/8e7d9b52f35f0599a24ac787eecb4ac38eb829d6/_pages/MyFigure.JPG"
+  avatar           : "_pages/MyFigure.JPG"
   name             : "Wang Haoran"
   pronouns         : # example: "she/her"  
   bio              : "A robot designer and a soccer zealot"
