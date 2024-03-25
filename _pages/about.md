@@ -1,4 +1,4 @@
----
+Self---
 permalink: /
 title: "Welcome to CrisWang's personal introduction page"
 author_profile: true
@@ -7,11 +7,8 @@ redirect_from:
   - /about.html
 ---
 
-<p align = "center">    
-<img  src="https://github.com/CrisWang6/CrisWang6.github.io/blob/7b7c0344e1b89e90b1addf3d4b78facd296746be/_pages/MyFigure.png" width="700" />
-</p>
 
-![Editing a markdown file for a talk](MyFigure.png)
+![Self](Self.png)
 
 
 WHO AM I
@@ -39,10 +36,9 @@ Publication
 
 •	Independently publish an essay to **the IEEE International Conference on Robotics and Biomimetics 2023**.
 
-<p align = "half">    
-<img  src="SwhegPro3_1.gif" width="500" />
-<img  src="SwhegPro3_2.gif" width="500" />
-</p>
+
+![SwhegPro3_1](SwhegPro3_1.gif)
+![SwhegPro3_2](SwhegPro3_2.gif)
 
 [**2. Ubiquitous Field Transportation Robots with Robust Wheel-Leg Transformable Modules**]()
 ---
@@ -54,9 +50,8 @@ Publication
 
 •	Submmited to **IEEE ACCESS**.
 
-<p align = "center">    
-<img  src="Detailed Mechanism Design of Wheel-Leg Transformable Modules in SWhegPro and SWhegPro3.png" width="600" />
-</p>
+
+![Detailed Mechanism](Detailed Mechanism Design of Wheel-Leg Transformable Modules in SWhegPro and SWhegPro3.png)
 
 **3. Pressure Insole Correction Method Based on Machine Learning Prediction Center of Pressure (In progress)**
 ---
@@ -77,10 +72,10 @@ Projects
 
 •	Make a video to demonstrate the performance and working principle of the SCARA robot we design.
 
-<p align = "half">    
-<img  src="SCARA robot demo.gif" width="500" />
-<img  src="SCARA robot demo2.gif" width="500" />
-</p>
+
+
+![SCARA robot demo](SCARA robot demo.gif)
+![SCARA robot demo2](SCARA robot demo2.gif)
 
 **2. Mobile Kitchen Waste Classifying Robot**
 ---
@@ -90,10 +85,9 @@ Projects
 
 •	Designed a user-friendly mobile garbage sorting robot, which is equipped with three-axis robotic arms and sliding rails.
 
-<p align = "center">    
-<img  src= "SDIM_Garbage sorting robot.gif" width="600" />
-</p>
 
+
+![SDIM_Garbage sorting robot](SDIM_Garbage sorting robot.gif)
 
 Different Me
 ===
