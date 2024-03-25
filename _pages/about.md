@@ -1,4 +1,4 @@
-Self---
+---
 permalink: /
 title: "Welcome to CrisWang's personal introduction page"
 author_profile: true
@@ -6,6 +6,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
+
 
 
 ![Self](Self.png)
