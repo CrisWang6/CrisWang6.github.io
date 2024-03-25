@@ -11,6 +11,8 @@ redirect_from:
 <img  src="https://github.com/CrisWang6/CrisWang6.github.io/blob/7b7c0344e1b89e90b1addf3d4b78facd296746be/_pages/MyFigure.png" width="700" />
 </p>
 
+![Editing a markdown file for a talk](/images/MyFigure.png)
+
 
 WHO AM I
 ===
