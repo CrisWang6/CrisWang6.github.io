@@ -18,7 +18,7 @@ I'm Wang Haoran(CrisWang), a senior undergraduate student from [Southern Univers
 
 My research interest includes **on-site application robots** and **exoskeleton robots**.
 
-My Curriculum Vita: [here](Haoran Wang_NOC_CV.pdf).
+My Curriculum Vita: [here](Haoran_Wang_NOC_CV.pdf).
 
 Email: 12011430@mail.sustech.edu.cn
 
@@ -92,9 +92,22 @@ Different Me
 ===
 Shown in the first picture in this page, i'm a outgoing boy and i think everyone's livelihood should be colorful, being an ESFP makes my life full of enthusiasm and power. I am willing to put all of meself into the career i choose.
 
+To challenge myself, I joined the high jump team in the final year of my undergraduate, hoping to pursue excellence in a brand-new event. I am passionate about it because it 
+is the only event that ends with failure in sports competitions, which means that I need to jump higher and higher to reach my goal, in line with my idea of pursuing better myself in life or work.
+
+And im also interest in videos making. Up to now, i have uploaded 50+ videos on my social media account and get 100K+ view, some of them are about travelling, some is the record of high jump training and the match, most of which are highlights of my football "career". What make me proud is that one of the highlights is forwarded by the official account of the Premier League in Bilibili, makes more people in China know our team. [My account](https://b23.tv/PuBgKcU)
 
 
 Videos
 ===
+[**Match of high jump in Guangdong Province 2023**](https://b23.tv/l7CkQUz)
+
+[**Highlights of "College Cup 2021"**](https://b23.tv/5Hgt3DD)
+
+[**Highlights of "College Cup 2023"**](https://b23.tv/Dut0e7q)
+
+[**The video forwarded by Premier League of Bilibili**](https://b23.tv/2C0f05G)
+
+[**2023 Promotional video: call for new**](https://b23.tv/7Nfu49q)
 
 
