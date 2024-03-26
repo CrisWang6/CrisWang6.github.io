@@ -38,8 +38,7 @@ Publication
 •	Independently publish an essay to **the IEEE International Conference on Robotics and Biomimetics 2023**.
 
 
-![SwhegPro3_1](SwhegPro3_1.gif)
-![SwhegPro3_2](SwhegPro3_2.gif)
+![SwhegPro3_1](SwhegPro3_1.gif) ![SwhegPro3_2](SwhegPro3_2.gif)
 
 [**2. Ubiquitous Field Transportation Robots with Robust Wheel-Leg Transformable Modules**]()
 ---
@@ -75,8 +74,7 @@ Projects
 
 
 
-![SCARA robot demo](SCARA_robot_demo.gif)
-![SCARA robot demo2](SCARA_robot_demo2.gif)
+![SCARA robot demo](SCARA_robot_demo.gif) ![SCARA robot demo2](SCARA_robot_demo2.gif)
 
 **2. Mobile Kitchen Waste Classifying Robot**
 ---
