@@ -100,6 +100,7 @@ Projects
 
 
 ![SDIM_Garbage sorting robot](SDIM_Garbage_sorting_robot.gif)
+![SDIM](SDIM.png)
 
 Different Me
 ===
