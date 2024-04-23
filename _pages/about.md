@@ -39,7 +39,6 @@ Publication
 
 ![SwhegPro3_1](SwhegPro3_1.gif) ![SwhegPro3_2](SwhegPro3_2.gif)
 ![Pro3_Stair_Test](Pro3_Stair_Test.png)
-![Pro3_Max_Speed_Test](Pro3_Max_Speed_Test.png)
 ![Cost_of_Different_Wheel_Number](Cost_of_Different_Wheel_Number.png)
 
 **2. Ubiquitous Field Transportation Robots with Robust Wheel-Leg Transformable Modules(Submitted)**
@@ -87,7 +86,7 @@ Projects
 
 •	Use python code to control the Gen3-lite robot arm to grab adapter as the end effector, and move according to the planned path to paint, 
 ![EE368_sample](EE368.png)
-![EE368_sample_2](EE368_2.png)
+
 
 
 **3. Mobile Kitchen Waste Classifying Robot**
