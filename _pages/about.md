@@ -78,11 +78,13 @@ Projects
 
 ![SCARA robot demo](SCARA_robot_demo.gif) ![SCARA robot demo2](SCARA_robot_demo2.gif)
 
-**2. A Painting Robot Based on the Gen3-lite Robot Arm (In progress, just started)**
+**2. A Drawing Robot Based on the Gen3-lite Robot Arm (In progress, just started)**
 ---
 ***Project Leader***
 
-•	Use the canny function in cv2 to extract the edge of the figure, and use greedy algorithm to plan the path according to the extracted point set.
+•	Use CANNY in cv2 to extract the edge of the figure, and use greedy algorithm to plan the path according to the extracted point set.
+
+•	Use depth cameras gather spatial dimensions of the work environment, focusing on the drawing surface's angles and positions.
 
 •	Use python code to control the Gen3-lite robot arm to grab adapter as the end effector, and move according to the planned path to paint, 
 ![EE368_sample](EE368.png)
