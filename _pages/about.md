@@ -18,7 +18,7 @@ I'm Wang Haoran(CrisWang), a senior undergraduate student from [Southern Univers
 
 My research interest includes **on-site application robots** and **exoskeleton robots**.
 
-My Curriculum Vita: [here](A_Drawing_Robot_Base_on_the_Gen3_lite_Robot_Arm.pdf).
+My Curriculum Vita: [here](WangHR_CV.pdf).
 
 Email: 12011430@mail.sustech.edu.cn
 
@@ -66,7 +66,7 @@ Publication
 
 Projects
 ===
-**1. A Parallel Five-Bar SCARA Robot with Suction Cup Manipulator**
+[**1. A Parallel Five-Bar SCARA Robot with Suction Cup Manipulator**](ME331_Course_Project_Group_Report.pdf)
 ---
 ***Project Member***
 
@@ -78,7 +78,8 @@ Projects
 
 ![SCARA robot demo](SCARA_robot_demo.gif) ![SCARA robot demo2](SCARA_robot_demo2.gif)
 
-**2. A Drawing Robot Based on the Gen3-lite Robot Arm (In progress, just started)**
+[**2. A Drawing Robot Based on the Gen3-lite Robot Arm**](A_Drawing_Robot_Base_on_the_Gen3_lite_Robot_Arm.pdf) 
+(In progress, just started)
 ---
 ***Project Leader***
 
