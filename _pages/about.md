@@ -18,7 +18,7 @@ I'm Wang Haoran(CrisWang), a senior undergraduate student from [Southern Univers
 
 My research interest includes **on-site application robots** and **exoskeleton robots**.
 
-My Curriculum Vita: [here](A_Drawing_Robot_Base_on_the_Gen3_lite_Robot_Arm-2.pdf).
+My Curriculum Vita: [here](A_Drawing_Robot_Base_on_the_Gen3_lite_Robot_Arm.pdf).
 
 Email: 12011430@mail.sustech.edu.cn
 
