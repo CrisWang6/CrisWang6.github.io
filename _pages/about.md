@@ -54,11 +54,15 @@ Publication
 ![SWhegPro&Pro3](SWhegPro&Pro3.png)
 ![Detailed Mechanism](Detailed_Mechanism.png)
 
-**3. The Ground Reaction of Walking State Prediction by Limb Acceleration and Angle Information Based on Neural Network (In progress)**
+**3. A Robust Method for the Calibration of Insole Pressure Sensors by Lower-limb IMU Information Based on Dataset and Neural Network (In progress)**
 ---
 ***Author***
 
-•	Select part of the data according to different targets, segment the gait period according to the Ground Reaction Force, normalize and standardize the data. Calculate the correlation coefficient between the target data(the Center of Pressure, Ground Reaction Force) and the reference data(angular velocity and acceleration information of IMU of foot, shank, thigh, thrunk).
+•	Select part of the data according to different targets, segment the gait period according to the Ground Reaction Force, normalize and standardize it. Calculate the correlation coefficient between the target data(the Center of Pressure, Ground Reaction Force) and the reference data(angular velocity and acceleration information of IMU of foot, shank, thigh, thrunk).
+
+• Comparision of results predicted by different structure of network(Seq2seq, Transformer, CNN, LSTM...), get the best model of prediction.
+
+• Use the ideal trajectory of Center of Pressure (Cop) to construct the matrix of parameters and calibrate the sensors.
 
 
 
