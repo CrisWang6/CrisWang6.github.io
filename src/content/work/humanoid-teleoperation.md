@@ -1,23 +1,37 @@
 ---
 title: Humanoid Teleoperation and Motion Retargeting
-summary: A real-time teleoperation pipeline that converts heterogeneous human inputs into robot motion trajectories.
+summary: A unified real-time pipeline that converts Xsens, PICO, and RGB-camera inputs into humanoid motion trajectories.
 role: Motion Control Algorithm Engineering Intern, UBTECH
 date: 2026-01-01
-tags: [Humanoid Robotics, Teleoperation, GMR, TWIST2, Isaac Sim]
+tags: [Humanoid Robotics, Teleoperation, GMR, TWIST2, MuJoCo]
+heroVideo: /projects/humanoid-teleoperation/motion-retargeting-demo.mp4
+heroAlt: Humanoid motion retargeting demonstration from captured human motion to a simulated robot
+links:
+  - label: TWIST2 project
+    url: https://github.com/YanjieZe/TWIST2
+  - label: GMR project
+    url: https://github.com/YanjieZe/GMR
 featured: true
 draft: false
 ---
 
-This project should become the site section that shows your robotics software depth: motion retargeting, imitation-learning data generation, and sim-to-real validation.
+## Overview
 
-**What to show next**
+This internship project connected heterogeneous human-motion inputs to a shared humanoid trajectory interface for imitation-learning data generation and real-time teleoperation.
 
-- System architecture diagram for the teleoperation pipeline
-- Supported input devices: Xsens IMU motion capture, PICO VR devices, RGB camera video streams
-- Trajectory generation examples
-- Simulation clips and Walker_S2 validation notes, if shareable
-- Clear note on what can and cannot be public from internship work
+## My contribution
 
-**Current note**
+- Extended the open-source General Motion Retargeting pipeline to generate large-scale robot motion trajectories for imitation learning.
+- Built a unified real-time teleoperation framework on top of TWIST2.
+- Integrated three input paths: Xsens inertial motion capture, PICO VR devices, and RGB-camera video streams.
+- Assisted with simulation-to-real validation on UBTECH's Walker S2 humanoid robot.
 
-Built on the open-source General Motion Retargeting framework and TWIST2 to generate large-scale robot motion trajectories for imitation learning and real-time humanoid teleoperation experiments.
+## System structure
+
+Each input device has its own coordinate conventions, skeletal representation, and update rate. Separate receiver modules normalize the streams into a shared human-motion representation. Retargeting modules then map that representation to robot joint trajectories and publish consistent observations for the downstream motion controller.
+
+The implementation supports both live streaming and replay from recorded sessions. This lets the same pipeline drive online teleoperation experiments and produce offline trajectories for imitation-learning datasets, while keeping capture, retargeting, visualization, and robot deployment as separable modules.
+
+## Public scope
+
+This page publishes the project summary and a motion-retargeting demo. Raw motion-capture datasets, deployment source, robot configuration details, and internal experiment material are intentionally not included in the website repository.

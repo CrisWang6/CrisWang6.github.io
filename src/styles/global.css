@@ -110,3 +110,14 @@
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
+.prose :where(img, video) {
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+}
+.prose :where(figcaption) {
+  color: var(--color-ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  margin-top: 0.75rem;
+}

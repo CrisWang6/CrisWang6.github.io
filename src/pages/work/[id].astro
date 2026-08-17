@@ -17,13 +17,14 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { title, summary, role, date, tags, url, repo } = entry.data;
+const { title, summary, role, date, tags, hero, heroVideo, heroAlt, url, repo, links } =
+  entry.data;
 const { Content } = await render(entry);
 
 const formattedDate = formatDate(date);
 ---
 
-<BaseLayout title={title} description={summary}>
+<BaseLayout title={title} description={summary} image={hero ?? ''}>
   <article class="mx-auto max-w-3xl px-6 pt-16 pb-24 sm:pt-24">
     <a href="/work" class="text-ink-soft hover:text-signal font-mono text-xs transition-colors">
       &lt;- All projects
@@ -48,7 +49,37 @@ const formattedDate = formatDate(date);
       }
     </dl>
 
-    <div class="prose prose-sm sm:prose-base mt-10 max-w-2xl">
+    <p class="text-ink-soft mt-8 max-w-2xl text-lg leading-relaxed">{summary}</p>
+
+    {
+      hero && (
+        <figure class="border-line bg-surface mt-10 overflow-hidden rounded-lg border">
+          <img
+            src={hero}
+            alt={heroAlt ?? title}
+            class="block aspect-[16/7] w-full object-cover"
+            loading="eager"
+          />
+        </figure>
+      )
+    }
+    {
+      heroVideo && (
+        <figure class="border-line bg-surface mt-10 overflow-hidden rounded-lg border">
+          <video
+            src={heroVideo}
+            aria-label={heroAlt ?? title}
+            class="block aspect-video w-full object-cover"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          />
+        </figure>
+      )
+    }
+
+    <div class="prose prose-sm sm:prose-base mt-12 max-w-2xl">
       <Content />
     </div>
 
@@ -66,6 +97,13 @@ const formattedDate = formatDate(date);
             View source
           </Button>
         )
+      }
+      {
+        links.map((link) => (
+          <Button href={link.url} variant="ghost">
+            {link.label}
+          </Button>
+        ))
       }
     </div>
   </article>
