@@ -1,0 +1,112 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+/* Make the `dark:` variant respond to a `.dark` class instead of OS
+   preference, so the toggle in <ThemeToggle /> can override the system. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------------
+   Design tokens (light values). Edit these five colors to re-skin the
+   entire site — every component reads from the tokens below, nothing
+   hardcodes a hex value.
+   --------------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+
+  --paper: #f8faf9; /* page background */
+  --ink: #17201d; /* primary text */
+  --ink-soft: #58655f; /* secondary text */
+  --signal: #007a5a; /* the one accent color */
+  --line: #dce5df; /* borders, rules */
+  --surface: #eef4f1; /* cards, raised panels */
+}
+
+.dark {
+  color-scheme: dark;
+
+  --paper: #101514;
+  --ink: #f0f5f2;
+  --ink-soft: #9cacA4;
+  --signal: #55d6ad;
+  --line: #26322e;
+  --surface: #18211e;
+}
+
+/* `inline` keeps these resolving against the live --paper/--ink/etc custom
+   properties above at runtime, instead of Tailwind inlining a static value
+   at build time — required for the .dark class swap to work. */
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-signal: var(--signal);
+  --color-line: var(--line);
+  --color-surface: var(--surface);
+
+  /* Astro's Fonts API exposes the loaded families on --ff-* (see
+     astro.config.mjs). These map them to font-display / font-body /
+     font-mono utility classes. */
+  --font-display: var(--ff-display);
+  --font-body: var(--ff-body);
+  --font-mono: var(--ff-mono);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-signal);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    body {
+      transition:
+        background-color 200ms ease,
+        color 200ms ease;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+      animation: none !important;
+    }
+  }
+}
+
+/* Tune @tailwindcss/typography to use the site's tokens instead of its
+   default gray scale, so rendered Markdown matches the rest of the page. */
+.prose {
+  --tw-prose-body: var(--color-ink-soft);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-links: var(--color-signal);
+  --tw-prose-bullets: var(--color-signal);
+  --tw-prose-hr: var(--color-line);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-quote-borders: var(--color-signal);
+  --tw-prose-code: var(--color-ink);
+}
+.prose :where(h2, h3, h4) {
+  font-family: var(--font-display);
+}
+.prose :where(a) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}

@@ -1,0 +1,91 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Button from '@/components/Button.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import { SITE } from '@/site.config';
+
+const education = [
+  {
+    school: 'Johns Hopkins University',
+    detail: 'M.S. Mechanical Engineering',
+    meta: 'Jan. 2026 - Present',
+  },
+  {
+    school: 'Southern University of Science and Technology',
+    detail: 'B.Eng. Robotics Engineering',
+    meta: 'Sep. 2020 - Jun. 2025',
+  },
+];
+
+const publications = [
+  'SWhegPro3: A Three-Impeller Wheel-Leg Transformable Robot with Variable Robust Adaptability to Stair Dimensions, IEEE ROBIO, 2023.',
+  'Ubiquitous Field Transportation Robots with Robust Wheel-Leg Transformable Modules, arXiv cs.RO, 2024.',
+  'An Off-line Self-calibration Method for Resistive Insole Pressure Sensors, IEEE RCAR, 2025.',
+];
+
+const skills = [
+  'Python',
+  'MATLAB',
+  'C/C++',
+  'Java',
+  'ROS',
+  'SolidWorks',
+  'Gazebo',
+  'Isaac Sim',
+  'Mujoco',
+  'AutoCAD',
+];
+---
+
+<BaseLayout title="CV" description={`CV snapshot for ${SITE.name}.`}>
+  <section class="mx-auto max-w-3xl px-6 pt-16 pb-24 sm:pt-24">
+    <p class="text-ink-soft mb-6 font-mono text-xs tracking-[0.2em] uppercase">CV</p>
+
+    <h1 class="font-display text-ink max-w-2xl text-3xl font-medium sm:text-4xl">
+      Robotics researcher with experience in locomotion, wearable sensing, and humanoid motion.
+    </h1>
+
+    <div class="mt-10 space-y-12">
+      <section>
+        <SectionHeading eyebrow="Education" />
+        <div class="space-y-5">
+          {
+            education.map((item) => (
+              <div class="border-line border-b pb-4">
+                <p class="text-ink font-medium">{item.school}</p>
+                <p class="text-ink-soft text-sm">{item.detail}</p>
+                <p class="text-ink-soft mt-1 font-mono text-xs">{item.meta}</p>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section>
+        <SectionHeading eyebrow="Publications" count={publications.length} />
+        <ul class="space-y-4">
+          {
+            publications.map((item) => (
+              <li class="border-line text-ink-soft border-b pb-4 text-sm">{item}</li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section>
+        <SectionHeading eyebrow="Technical stack" />
+        <ul class="flex flex-wrap gap-2">
+          {
+            skills.map((skill) => (
+              <li class="border-line text-ink-soft rounded-full border px-3 py-1 font-mono text-xs">
+                {skill}
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+
+    <Button href={`mailto:${SITE.email}`} class="mt-12">Contact</Button>
+  </section>
+</BaseLayout>

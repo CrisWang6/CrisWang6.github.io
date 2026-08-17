@@ -1,41 +1,111 @@
+<div align="center">
 
-# Academic Pages
+# Haoran (Cris) Wang - Robotics Portfolio
 
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
+Astro portfolio scaffold for Haoran Wang's robotics research, selected projects,
+technical stack, publications, and CV.
 
-Academic Pages is a Github Pages template for academic websites.
+[Live site](https://criswang6.github.io/) · [GitHub profile](https://github.com/CrisWang6)
 
+</div>
 
-# Getting Started
+<br />
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+<div align="center">
+  <img src="./public/og-image.png" alt="Portfolio Starter preview" width="100%" style="max-width: 720px; border-radius: 8px;" />
+</div>
 
-See more info at https://academicpages.github.io/
+<br />
 
-## Running Locally
+## Why this template
 
-When you are initially working your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
+- Static Astro site that works well on GitHub Pages.
+- Project pages are Markdown files in `src/content/work/`.
+- Tailwind CSS keeps the visual system lightweight and easy to adjust.
+- Built-in SEO, sitemap, dark mode, and typed content collections.
+- Good fit for a research portfolio with publications, project media, and CV sections.
 
-1. Clone the repository and made updates as detailed above.
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+## Quick start
 
+```bash
+git clone https://github.com/CrisWang6/CrisWang6.github.io.git
+cd CrisWang6.github.io
+pnpm install
+pnpm dev
+```
 
-# Maintenance 
+> Any package manager works.
 
-Bug reports and feature requests to the template  should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+Open `http://localhost:4321`.
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
+| Command        | Action                                             |
+| -------------- | -------------------------------------------------- |
+| `pnpm dev`     | Start the local dev server                         |
+| `pnpm build`   | Type-check, then build for production to `./dist/` |
+| `pnpm preview` | Preview the production build locally               |
+| `pnpm check`   | Run `astro check` only                             |
+| `pnpm format`  | Format the project with Prettier                   |
 
-## Bugfixes and enhancements
+## Project structure
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
+```text
+├── public/
+│   ├── favicon.svg
+│   ├── favicons/
+│   ├── og-image.png          # replace with your own 1200×630 image
+│   └── robots.txt
+├── src/
+│   ├── assets/               # static images and assets
+│   ├── components/           # BaseHead, Button, Footer, Header, SectionHeading, ThemeToggle, WorkRow
+│   ├── content/
+│   │   └── work/*.md         # one file per project
+│   ├── layouts/
+│   │   └── BaseLayout.astro  # <head>, SEO, fonts, theme script
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── about.astro
+│   │   ├── work/[id].astro
+│   │   └── 404.astro
+│   ├── styles/
+│   │   └── global.css        # design tokens + Tailwind import
+│   ├── utils/
+│   │   └── formatDate.ts     # date formatting helpers
+│   ├── content.config.ts     # Zod schema for the "work" collection
+│   └── site.config.ts        # name, bio, email, social links
+├── astro.config.mjs
+└── tsconfig.json
+```
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+## Editing content
+
+Edit `src/site.config.ts` for global identity, links, and contact info.
+
+Add or update projects in `src/content/work/`. Each project is one Markdown file
+with frontmatter for title, role, date, tags, links, and feature status.
+
+Required project frontmatter:
+
+```md
+---
+title: Project Name
+summary: One sentence, shown in the list view.
+role: Your role on the project
+date: 2026-01-15
+tags: [Astro, TypeScript]
+url: https://example.com # optional
+repo: https://github.com/... # optional
+featured: true # optional, shows it first on the homepage
+---
+
+Full write-up in Markdown.
+```
+
+## Deploying
+
+The included GitHub Actions workflow builds the site and deploys `dist/` to
+GitHub Pages when changes are pushed to `main`.
+
+## License
+
+MIT — see [LICENSE](./LICENSE). Free to use for personal or commercial projects,
+attribution appreciated but not required.

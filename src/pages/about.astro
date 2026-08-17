@@ -1,0 +1,60 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Button from '@/components/Button.astro';
+import { SITE } from '@/site.config';
+
+const tools = [
+  'Python',
+  'ROS',
+  'C/C++',
+  'MATLAB',
+  'SolidWorks',
+  'Gazebo',
+  'Isaac Sim',
+  'Mujoco',
+  'AutoCAD',
+  'Keil',
+];
+---
+
+<BaseLayout title="About" description={`A bit about ${SITE.name} and his robotics work.`}>
+  <section class="mx-auto max-w-3xl px-6 pt-16 pb-24 sm:pt-24">
+    <p class="text-ink-soft mb-6 font-mono text-xs tracking-[0.2em] uppercase">About</p>
+
+    <h1 class="font-display text-ink max-w-xl text-3xl font-medium sm:text-4xl">
+      Robotics research shaped by hardware, software, and field testing.
+    </h1>
+
+    <div class="prose prose-sm sm:prose-base mt-8 max-w-xl">
+      <p>
+        I am Haoran Wang, also known as Cris, a master's student in Mechanical Engineering at
+        Johns Hopkins University. My work sits between robotics mechanism design, motion
+        control, wearable sensing, and vision-based pose estimation.
+      </p>
+      <p>
+        Before JHU, I studied Robotics Engineering at Southern University of Science and
+        Technology, where I worked on wheel-leg transformable robots, insole pressure sensor
+        calibration, drawing robots, and compact manipulation mechanisms.
+      </p>
+      <p>
+        Recently, I have been building a headband-wristband full-body data collection system and
+        working with robot motion retargeting and teleoperation pipelines for humanoid robots.
+      </p>
+    </div>
+
+    <div class="mt-10">
+      <p class="text-ink-soft mb-3 font-mono text-xs tracking-[0.2em] uppercase">Tools</p>
+      <ul class="flex flex-wrap gap-2">
+        {
+          tools.map((tool) => (
+            <li class="border-line text-ink-soft rounded-full border px-3 py-1 font-mono text-xs">
+              {tool}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <Button href={`mailto:${SITE.email}`} class="mt-10">Get in touch</Button>
+  </section>
+</BaseLayout>

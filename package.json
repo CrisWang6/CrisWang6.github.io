@@ -1,38 +1,51 @@
 {
-  "name": "academic-pages",
-  "version": "0.8.1.1",
-  "description": "Academic Pages Mistakes Jekyll theme npm build scripts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/academicpages/academicpages.github.io"
-  },
+  "name": "criswang6.github.io",
+  "type": "module",
+  "version": "1.0.0",
+  "private": false,
+  "packageManager": "pnpm@11.19.0",
+  "description": "Robotics research portfolio for Haoran (Cris) Wang.",
   "keywords": [
-    "jekyll",
-    "theme",
-    "minimal"
-  ],
-  "contributors": [
-    "Michael Rose",
-    "Robert Zupko"
+    "astro",
+    "astro-theme",
+    "astro-template",
+    "portfolio",
+    "tailwindcss",
+    "typescript",
+    "starter"
   ],
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/academicpages/academicpages.github.io/issues"
+  "author": "Haoran Wang",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CrisWang6/CrisWang6.github.io"
   },
-  "homepage": "https://github.com/academicpages/academicpages.github.io",
+  "homepage": "https://criswang6.github.io/",
   "engines": {
-    "node": ">= 0.10.0"
-  },
-  "dependencies": {
-    "jquery": "^3.7.1"
-  },
-  "devDependencies": {
-    "onchange": "^7.1.0",
-    "uglify-js": "^3.17.4"
+    "node": ">=22.0.0"
   },
   "scripts": {
-    "uglify": "uglifyjs node_modules/jquery/dist/jquery.min.js assets/js/plugins/jquery.fitvids.js assets/js/plugins/jquery.greedy-navigation.js assets/js/plugins/jquery.magnific-popup.js assets/js/plugins/jquery.smooth-scroll.min.js assets/js/plugins/stickyfill.min.js assets/js/_main.js -c -m -o assets/js/main.min.js",
-    "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
-    "build:js": "npm run uglify"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.0.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.2",
+    "prettier": "^3.9.4",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "tailwindcss": "^4.3.2",
+    "typescript": "^6.0.3"
   }
 }
