@@ -161,8 +161,65 @@
   width: 100%;
 }
 
+.prose .teleop-flow {
+  align-items: stretch;
+  display: grid;
+  gap: 0.625rem;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  margin: 2rem 0;
+  max-width: 100%;
+}
+.prose .teleop-flow__stage {
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0;
+  min-width: 0;
+  padding: 0.875rem;
+}
+.prose .teleop-flow__stage span {
+  color: var(--color-signal);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.4;
+}
+.prose .teleop-flow__stage strong {
+  color: var(--color-ink);
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  line-height: 1.35;
+  margin-top: 0.5rem;
+  overflow-wrap: anywhere;
+}
+.prose .teleop-flow__stage small {
+  color: var(--color-ink-soft);
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+.prose .teleop-flow__arrow {
+  align-self: center;
+  color: var(--color-signal);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  margin: 0;
+}
+
 @media (max-width: 40rem) {
   .prose .project-media-pair {
     grid-template-columns: 1fr;
+  }
+
+  .prose .teleop-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .prose .teleop-flow__arrow {
+    justify-self: center;
+    transform: rotate(90deg);
   }
 }
