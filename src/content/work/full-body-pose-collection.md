@@ -3,7 +3,7 @@ title: Head-Wrist Egocentric Full-Body Pose Recovery System
 summary: An end-to-end platform for synchronized wearable capture, multi-view ground-truth reconstruction, and egocentric pose learning.
 role: Summer Researcher, HKU MMLab
 date: 2026-03-01
-tags: [DepthAI/OAK, Kalibr, RTMPose/RTMW, Fisheye Camera, Multi-view Triangulation, PyTorch, Isaac Sim, SolidWorks, IMU AHRS, H.265]
+tags: [Kalibr, RTMPose, Fisheye Camera, Multi-view Triangulation, PyTorch, SolidWorks]
 repo: https://github.com/CrisWang6/Head-Wrist-Full-Body-Pose-Recovery
 featured: true
 draft: false
@@ -11,19 +11,19 @@ draft: false
 
 ## Overview
 
-I built an end-to-end research platform for egocentric full-body pose recovery, spanning wearable hardware, synchronized multi-camera capture, external 3D human reconstruction, fisheye projection and optimization, and model training based on EgoRear and EgoPoseFormer. I also engineered the codebase and organized the project for open-source release on GitHub.
+I built an end-to-end research platform for egocentric full-body pose recovery, spanning wearable hardware, synchronized multi-camera capture, external 3D human reconstruction, fisheye projection and optimization, and model training based on EgoRear and EgoPoseFormer.
 
 ## End-to-end pipeline
 
 1. Design and calibrate the headband and wristband capture hardware.
 2. Record synchronized six- and nine-camera fisheye video together with head and wrist IMU streams.
-3. Recover high-quality external 2D and 3D human pose ground truth from multi-view observations.
+3. Recover high-quality external 2D and 3D human pose as ground truth from multi-view observations.
 4. Transform and project the reconstructed pose into the head-mounted fisheye camera coordinate system.
 5. Process aligned real-world sequences and train egocentric pose models in the EgoRear and EgoPoseFormer frameworks.
 
 ## Mechanical design
 
-I iterated the headband and wristband through six hardware generations. The mechanical interfaces constrain each camera, fiducial tag, and motion-capture rigid body in a stable geometric chain, making the wearable setup repeatable across calibration and recording sessions.
+I iterated the headband and wristband through hardware generations. The mechanical interfaces constrain each camera, fiducial tag, and motion-capture rigid body in a stable geometric chain, making the wearable setup repeatable across calibration and recording sessions.
 
 <figure class="project-media project-media--compact">
   <img src="/projects/full-body-pose/wristband-hardware.jpg" alt="Wearable wristband prototype with multiple fiducial markers and an inward-facing camera" />
@@ -82,4 +82,4 @@ This environment supported geometry studies before hardware experiments and supp
 
 ## Technology
 
-DepthAI/OAK, Kalibr, RTMPose/RTMW, omni-directional fisheye cameras, multi-view triangulation, optical motion-capture rigid bodies, PyTorch, EgoRear, EgoPoseFormer, Isaac Sim, BlenderProc, SolidWorks/STEP, ArUco/AprilTag, IMU AHRS with Mahony filtering, AMASS, SMPL-X, and synchronized H.265 video pipelines.
+Kalibr, RTMPose, fisheye cameras calibration, multi-view triangulation, PyTorch, Isaac Sim, BlenderProc, SolidWorks, ArUco/AprilTag, SMPL-X.
