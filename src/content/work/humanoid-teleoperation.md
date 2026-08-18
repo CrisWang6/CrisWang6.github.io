@@ -65,6 +65,11 @@ The same downstream pipeline handles live inputs and recorded-session replay. Th
 
 Each device has different coordinates, skeleton definitions, update rates, and transport protocols. Source-specific receivers convert PICO tracking frames, Xsens UDP datagrams, or PromptHMR SMPL-X output into a shared representation of named joints with position and quaternion data.
 
+<figure class="project-video">
+  <video src="/projects/humanoid-teleoperation/pico-teleoperation.mp4" aria-label="PICO teleoperation input and humanoid motion retargeting demonstration" controls muted playsinline preload="metadata"></video>
+  <figcaption>PICO 4 Ultra input running through the unified teleoperation and retargeting pipeline.</figcaption>
+</figure>
+
 ### Shared pose bus
 
 Redis separates acquisition from retargeting. Device receivers publish source-specific keys, while translators consume them independently. Offline senders replay recorded JSONL with original timing or a controlled playback rate, so the same processing path can be tested without reconnecting hardware.
@@ -73,9 +78,19 @@ Redis separates acquisition from retargeting. Device receivers publish source-sp
 
 GMR maps the normalized human pose to the selected humanoid model. Post-processing applies optional ground alignment, Walker S2 shoulder corrections, hand/controller states, and temporal smoothing before publishing a consistent robot mimic observation.
 
+<figure class="project-video">
+  <video src="/projects/humanoid-teleoperation/xsens-simulation.mp4" aria-label="Xsens motion capture retargeted to a humanoid robot in simulation" controls muted playsinline preload="metadata"></video>
+  <figcaption>Xsens MVN motion retargeting evaluated in simulation before physical deployment.</figcaption>
+</figure>
+
 ### Simulation and deployment
 
 A ROS 2 bridge converts the Redis output into the joint-state layout expected by downstream sim-to-sim or sim-to-real controllers. Recording utilities preserve processed trajectories and episode data for imitation-learning workflows. Physical-robot tests follow simulation checks and conservative safety limits.
+
+<figure class="project-video project-video--portrait">
+  <video src="/projects/humanoid-teleoperation/xsens-real-robot.mp4" aria-label="Xsens teleoperation validation on a physical humanoid robot" controls muted playsinline preload="metadata"></video>
+  <figcaption>Xsens-driven motion validated on the physical humanoid platform after simulation checks.</figcaption>
+</figure>
 
 ## Implementation status
 

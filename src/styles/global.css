@@ -161,6 +161,26 @@
   width: 100%;
 }
 
+.prose .project-video {
+  margin: 2rem auto;
+  max-width: 42rem;
+}
+.prose .project-video video {
+  aspect-ratio: 16 / 9;
+  background: #080d0b;
+  display: block;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+  width: 100%;
+}
+.prose .project-video--portrait {
+  max-width: 22rem;
+}
+.prose .project-video--portrait video {
+  aspect-ratio: 9 / 16;
+}
+
 .prose .teleop-flow {
   align-items: stretch;
   display: grid;
