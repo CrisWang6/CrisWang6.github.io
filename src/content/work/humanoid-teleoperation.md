@@ -4,8 +4,6 @@ summary: A modular pipeline unifying PICO, Xsens, and camera motion inputs for h
 role: Motion Control Algorithm Engineering Intern, UBTECH
 date: 2026-01-01
 tags: [Humanoid Robotics, Teleoperation, GMR, Redis, ROS 2]
-heroVideo: /projects/humanoid-teleoperation/motion-retargeting-demo.mp4
-heroAlt: Humanoid motion retargeting demonstration from captured human motion to a simulated robot
 repo: https://github.com/CrisWang6/MULTITELEOP
 links:
   - label: TWIST2 project
