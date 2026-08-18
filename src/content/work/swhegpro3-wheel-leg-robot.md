@@ -6,6 +6,7 @@ date: 2024-10-24
 tags: [Wheel-Leg Robot, Mechanical Design, Locomotion, ROS, MATLAB]
 hero: /projects/swhegpro3/platforms.png
 heroAlt: SWhegPro and SWhegPro3 robots shown in wheel and leg configurations
+heroSize: content
 links:
   - label: Field transportation paper (PDF)
     url: /projects/swhegpro3/field-transportation-paper.pdf

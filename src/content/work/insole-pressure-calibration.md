@@ -6,6 +6,7 @@ date: 2025-06-01
 tags: [Wearable Sensing, Optimization, Biomechanics, Python, MATLAB]
 hero: /projects/insole-calibration/calibration-test.png
 heroAlt: Insole calibration experiment on a force-measuring treadmill and force curves before and after calibration
+heroSize: content
 links:
   - label: RCAR 2025 paper (PDF)
     url: /projects/insole-calibration/rcar-2025-paper.pdf
@@ -27,7 +28,15 @@ As an undergraduate researcher and co-first author, I worked on building the wea
 
 The insole contains 18 resistive sensing regions. Each recorded stance phase is normalized to 100 time steps, then a nonlinear time-varying coefficient matrix maps the 18 sensor readings to vertical ground reaction force. The coefficients are optimized offline with RMSE as the loss function, using gait-phase constraints to make the calibration process lightweight and repeatable.
 
-![Physical behavior of the resistive insole sensors across the stance phase](/projects/insole-calibration/sensor-characteristics.png)
+<figure class="project-media project-media--wide project-media--diagram">
+  <img src="/projects/insole-calibration/system-pipeline.png" alt="Wearable insole sensing, reference-force acquisition, dataset processing, and model calibration pipeline" />
+  <figcaption>System pipeline for wearable sensing, reference acquisition, and offline calibration.</figcaption>
+</figure>
+
+<figure class="project-media project-media--wide">
+  <img src="/projects/insole-calibration/sensor-characteristics.png" alt="Physical behavior of the resistive insole sensors across the stance phase" />
+  <figcaption>Sensor behavior and gait-phase constraints used by the calibration method.</figcaption>
+</figure>
 
 ## Results
 

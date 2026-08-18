@@ -21,6 +21,15 @@ I built an end-to-end research platform for egocentric full-body pose recovery, 
 4. Transform and project the reconstructed pose into the head-mounted fisheye camera coordinate system.
 5. Process aligned real-world sequences and train egocentric pose models in the EgoRear and EgoPoseFormer frameworks.
 
+## Mechanical design
+
+I iterated the headband and wristband through six hardware generations. The mechanical interfaces constrain each camera, fiducial tag, and motion-capture rigid body in a stable geometric chain, making the wearable setup repeatable across calibration and recording sessions.
+
+<figure class="project-media project-media--compact">
+  <img src="/projects/full-body-pose/wristband-hardware.jpg" alt="Wearable wristband prototype with multiple fiducial markers and an inward-facing camera" />
+  <figcaption>Wristband prototype with camera, electronics, and calibration tags.</figcaption>
+</figure>
+
 ## My contribution
 
 - Designed the mechanical wearable system and assembled the camera, trigger, tag, rigid-body, and IMU electronics.
@@ -30,11 +39,16 @@ I built an end-to-end research platform for egocentric full-body pose recovery, 
 - Collected, processed, and validated multiple real-world batches for model training and evaluation.
 - Refactored the research code into a reproducible project and prepared the public GitHub repository.
 
-## Multi-camera capture and calibration
+## System design and synchronized capture
 
 The acquisition system combines DepthAI/OAK cameras with head and wrist IMUs. An external trigger starts all streams from a shared event, while per-frame timestamps support fine-grained temporal alignment across six- and nine-camera configurations. Camera intrinsics and inter-camera extrinsics are calibrated in Kalibr using an omni-directional fisheye model.
 
 The wearable hardware was designed around a stable geometric chain between each camera, fiducial tag, and motion-capture rigid body. This makes calibration repeatable across recording sessions and allows the complete capture rig to be reconstructed in a common coordinate system.
+
+<figure class="project-media project-media--portrait">
+  <img src="/projects/full-body-pose/capture-system.jpg" alt="Participant wearing the head-wrist capture system inside the external motion-capture volume" />
+  <figcaption>Wearable system inside the external motion-capture setup.</figcaption>
+</figure>
 
 ## 3D pose ground truth
 
@@ -42,9 +56,23 @@ External stereo and multi-view cameras run RTMPose/RTMW for 2D keypoint detectio
 
 This process connects external observations with the moving wearable coordinate frame, providing cleaner supervision than relying on a single reconstruction or projection stage.
 
+## Wrist-camera hand pose exploration
+
+I also explored inward-facing wrist cameras for hand-pose perception during object manipulation. The experiments tested whether a compact wrist-mounted fisheye view could recover a stable 2D hand skeleton despite close-range distortion, self-occlusion, and rapid viewpoint changes.
+
+<div class="project-media-pair">
+  <img src="/projects/full-body-pose/hand-pose-1.jpg" alt="Hand skeleton detected from an inward-facing wrist camera while manipulating a tablet" />
+  <img src="/projects/full-body-pose/hand-pose-2.jpg" alt="Hand skeleton detected from an inward-facing wrist camera with an open palm" />
+</div>
+
 ## Real-world data and model training
 
 Across multiple capture batches, I collected approximately two hours of synchronized and aligned real-world data. I built the batch-processing workflow used to generate training-ready sequences, then ran multiple rounds of staged training and evaluation within the EgoRear framework while adapting components from EgoPoseFormer.
+
+<figure class="project-media project-media--wide">
+  <img src="/projects/full-body-pose/model-predictions.jpg" alt="Egocentric fisheye pose predictions compared with projected ground truth across multiple camera views" />
+  <figcaption>Predicted skeletons compared with projected ground truth on held-out fisheye views.</figcaption>
+</figure>
 
 ## Simulation and supporting tools
 

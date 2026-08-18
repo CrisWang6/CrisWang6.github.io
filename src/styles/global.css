@@ -121,3 +121,48 @@
   letter-spacing: 0;
   margin-top: 0.75rem;
 }
+
+.prose .project-media {
+  margin: 2rem auto;
+  max-width: 100%;
+}
+.prose .project-media img {
+  display: block;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+  width: 100%;
+}
+.prose .project-media--compact {
+  max-width: 25rem;
+}
+.prose .project-media--portrait {
+  max-width: 20rem;
+}
+.prose .project-media--wide {
+  max-width: 42rem;
+}
+.prose .project-media--diagram img {
+  background: #ffffff;
+}
+.prose .project-media-pair {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 2rem auto;
+  max-width: 42rem;
+}
+.prose .project-media-pair img {
+  aspect-ratio: 4 / 3;
+  display: block;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (max-width: 40rem) {
+  .prose .project-media-pair {
+    grid-template-columns: 1fr;
+  }
+}

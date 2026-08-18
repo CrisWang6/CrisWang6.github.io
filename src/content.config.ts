@@ -18,6 +18,7 @@ const work = defineCollection({
       hero: z.string().optional(),
       heroVideo: z.string().optional(),
       heroAlt: z.string().optional(),
+      heroSize: z.enum(['full', 'content', 'compact']).default('full'),
       url: z.url().optional(),
       repo: z.url().optional(),
       links: z

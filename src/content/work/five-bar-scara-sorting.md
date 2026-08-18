@@ -6,6 +6,7 @@ date: 2022-12-01
 tags: [SCARA, FEA, SolidWorks, Mechanism Design, Manipulation]
 hero: /projects/five-bar-scara/sorting-demo.gif
 heroAlt: Five-bar SCARA robot picking and moving a small green object with a vacuum end effector
+heroSize: compact
 links:
   - label: Course report (PDF)
     url: /projects/five-bar-scara/course-project-report.pdf
@@ -30,7 +31,9 @@ As the mechanical designer, I focused on the structure and end effector:
 
 The final geometry uses 180 mm between the two base joints and 135 mm links. Two DJI M6020 direct-drive motors provide actuation, while a Raspberry Pi 4B communicates with the motor controllers over CAN. The end effector uses a servo-driven tendon to compress a spring for vertical motion, with a vacuum pump supplying adhesion.
 
-![Side view of the completed five-bar SCARA robot moving its end effector](/projects/five-bar-scara/robot-overview.gif)
+<figure class="project-media project-media--compact">
+  <img src="/projects/five-bar-scara/robot-overview.gif" alt="Side view of the completed five-bar SCARA robot moving its end effector" />
+</figure>
 
 ## Team result
 

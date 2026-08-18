@@ -17,11 +17,16 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { title, summary, role, date, tags, hero, heroVideo, heroAlt, url, repo, links } =
+const { title, summary, role, date, tags, hero, heroVideo, heroAlt, heroSize, url, repo, links } =
   entry.data;
 const { Content } = await render(entry);
 
 const formattedDate = formatDate(date);
+const heroSizeClass = {
+  full: 'max-w-3xl',
+  content: 'max-w-2xl',
+  compact: 'max-w-[25rem]',
+}[heroSize];
 ---
 
 <BaseLayout title={title} description={summary} image={hero ?? ''}>
@@ -53,11 +58,16 @@ const formattedDate = formatDate(date);
 
     {
       hero && (
-        <figure class="border-line bg-surface mt-10 overflow-hidden rounded-lg border">
+        <figure
+          class:list={[
+            'border-line bg-surface mt-10 mx-auto overflow-hidden rounded-lg border',
+            heroSizeClass,
+          ]}
+        >
           <img
             src={hero}
             alt={heroAlt ?? title}
-            class="block aspect-[16/7] w-full object-cover"
+            class="block h-auto w-full object-contain"
             loading="eager"
           />
         </figure>
