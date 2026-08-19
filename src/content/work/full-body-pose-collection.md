@@ -84,6 +84,19 @@ Across multiple capture batches, I collected approximately two hours of synchron
   <figcaption>Internal test-set evaluation: model prediction on the left and the corresponding ground truth on the right.</figcaption>
 </figure>
 
+### 3D Pose Estimation
+
+| Method | Dataset and camera setup | MPJPE ↓ |
+| --- | --- | ---: |
+| **Our method** | Internally collected data, validation split | **50.5 mm** |
+| [EgoPoseFormer](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/07241.pdf) | SceneEgo, real-world monocular | 93.0 mm |
+| EgoPoseFormer | Ego4View-RW, two front cameras | 77.95 mm |
+| EgoPoseFormer | Ego4View-RW, two front and two rear cameras | 63.38 mm |
+| [EgoRear](https://arxiv.org/html/2503.11652v2) | Ego4View-RW, two front and two rear cameras | 56.94 mm |
+| EgoPoseFormer | UnrealEgo, synthetic stereo | 33.4 mm |
+
+Published results are included as literature references; datasets, camera configurations, skeleton definitions, and evaluation protocols differ.
+
 ## Simulation and supporting tools
 
 In parallel, I developed a simulation and validation environment using Isaac Sim and BlenderProc. The tooling compares Mahony-filtered head and wrist IMU orientation against optical motion capture, provides skeleton playback for debugging, and generates randomized synthetic motion from AMASS sequences and SMPL-X bodies.
