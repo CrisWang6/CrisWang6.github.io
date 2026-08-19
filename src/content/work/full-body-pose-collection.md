@@ -56,6 +56,11 @@ External stereo and multi-view cameras run RTMPose/RTMW for 2D keypoint detectio
 
 This process connects external observations with the moving wearable coordinate frame, providing cleaner supervision than relying on a single reconstruction or projection stage.
 
+<figure class="project-video">
+  <video src="/projects/full-body-pose/multi-view-3d-ground-truth.mp4" aria-label="Three-dimensional pose ground truth reconstructed from external multi-camera observations" controls muted playsinline preload="metadata"></video>
+  <figcaption>3D pose ground truth reconstructed by triangulating detections from the synchronized external multi-camera system.</figcaption>
+</figure>
+
 ## Wrist-camera hand pose exploration
 
 I also explored inward-facing wrist cameras for hand-pose perception during object manipulation. The experiments tested whether a compact wrist-mounted fisheye view could recover a stable 2D hand skeleton despite close-range distortion, self-occlusion, and rapid viewpoint changes.
@@ -72,6 +77,11 @@ Across multiple capture batches, I collected approximately two hours of synchron
 <figure class="project-media project-media--wide">
   <img src="/projects/full-body-pose/model-predictions.jpg" alt="Egocentric fisheye pose predictions compared with projected ground truth across multiple camera views" />
   <figcaption>Predicted skeletons compared with projected ground truth on held-out fisheye views.</figcaption>
+</figure>
+
+<figure class="project-video">
+  <video src="/projects/full-body-pose/pose-estimation-test-vs-ground-truth.mp4" aria-label="Pose estimation result on the internal test set shown beside its ground truth" controls muted playsinline preload="metadata"></video>
+  <figcaption>Internal test-set evaluation: model prediction on the left and the corresponding ground truth on the right.</figcaption>
 </figure>
 
 ## Simulation and supporting tools
