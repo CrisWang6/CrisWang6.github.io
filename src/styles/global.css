@@ -160,6 +160,10 @@
   object-fit: cover;
   width: 100%;
 }
+.prose .project-media-pair--compact {
+  max-width: 80%;
+  width: 33.6rem;
+}
 
 .prose .project-video {
   margin: 2rem auto;
@@ -179,6 +183,10 @@
 }
 .prose .project-video--portrait video {
   aspect-ratio: 9 / 16;
+}
+.prose .project-video--compact {
+  max-width: 80%;
+  width: 33.6rem;
 }
 .prose .project-video--ultrawide video {
   aspect-ratio: 16 / 5;

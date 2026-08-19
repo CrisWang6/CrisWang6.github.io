@@ -56,7 +56,7 @@ External stereo and multi-view cameras run RTMPose/RTMW for 2D keypoint detectio
 
 This process connects external observations with the moving wearable coordinate frame, providing cleaner supervision than relying on a single reconstruction or projection stage.
 
-<figure class="project-video">
+<figure class="project-video project-video--compact">
   <video src="/projects/full-body-pose/multi-view-3d-ground-truth.mp4" aria-label="Three-dimensional pose ground truth reconstructed from external multi-camera observations" controls muted playsinline preload="metadata"></video>
   <figcaption>3D pose ground truth reconstructed by triangulating detections from the synchronized external multi-camera system.</figcaption>
 </figure>
@@ -65,7 +65,7 @@ This process connects external observations with the moving wearable coordinate 
 
 I explored hand-pose perception from both inward-facing wrist cameras and head-mounted stereo views during object manipulation. These experiments tested whether compact egocentric cameras could recover stable 2D hand skeletons despite close-range distortion, self-occlusion, and rapid viewpoint changes.
 
-<div class="project-media-pair">
+<div class="project-media-pair project-media-pair--compact">
   <img src="/projects/full-body-pose/hand-pose-1.jpg" alt="Hand skeleton detected from an inward-facing wrist camera while manipulating a tablet" />
   <img src="/projects/full-body-pose/hand-pose-2.jpg" alt="Hand skeleton detected from an inward-facing wrist camera with an open palm" />
 </div>
