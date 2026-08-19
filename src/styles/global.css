@@ -180,6 +180,9 @@
 .prose .project-video--portrait video {
   aspect-ratio: 9 / 16;
 }
+.prose .project-video--ultrawide video {
+  aspect-ratio: 16 / 5;
+}
 
 .prose .teleop-flow {
   align-items: stretch;

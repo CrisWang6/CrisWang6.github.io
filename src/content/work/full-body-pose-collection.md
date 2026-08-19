@@ -61,14 +61,19 @@ This process connects external observations with the moving wearable coordinate 
   <figcaption>3D pose ground truth reconstructed by triangulating detections from the synchronized external multi-camera system.</figcaption>
 </figure>
 
-## Wrist-camera hand pose exploration
+## Egocentric hand pose exploration
 
-I also explored inward-facing wrist cameras for hand-pose perception during object manipulation. The experiments tested whether a compact wrist-mounted fisheye view could recover a stable 2D hand skeleton despite close-range distortion, self-occlusion, and rapid viewpoint changes.
+I explored hand-pose perception from both inward-facing wrist cameras and head-mounted stereo views during object manipulation. These experiments tested whether compact egocentric cameras could recover stable 2D hand skeletons despite close-range distortion, self-occlusion, and rapid viewpoint changes.
 
 <div class="project-media-pair">
   <img src="/projects/full-body-pose/hand-pose-1.jpg" alt="Hand skeleton detected from an inward-facing wrist camera while manipulating a tablet" />
   <img src="/projects/full-body-pose/hand-pose-2.jpg" alt="Hand skeleton detected from an inward-facing wrist camera with an open palm" />
 </div>
+
+<figure class="project-video project-video--ultrawide">
+  <video src="/projects/full-body-pose/head-view-hand-pose.mp4" aria-label="Hand-pose recognition results from the head-mounted stereo camera views" controls muted playsinline preload="metadata"></video>
+  <figcaption>Hand-pose recognition from the head-mounted stereo views during close-range interaction.</figcaption>
+</figure>
 
 ## Real-world data and model training
 
