@@ -75,6 +75,11 @@ I explored hand-pose perception from both inward-facing wrist cameras and head-m
   <figcaption>Hand-pose recognition from the head-mounted stereo views during close-range interaction.</figcaption>
 </figure>
 
+<figure class="project-video">
+  <video src="/projects/full-body-pose/full-body-hands-yaw140.mp4" aria-label="Full-body pose with wrist-ground-truth-anchored stereo hand reconstruction at a yaw setting of 140 degrees" controls muted playsinline preload="metadata"></video>
+  <figcaption>Full-body pose with wrist-ground-truth-anchored stereo hand reconstruction at a yaw setting of 140 degrees.</figcaption>
+</figure>
+
 ## Real-world data and model training
 
 Across multiple capture batches, I collected approximately two hours of synchronized and aligned real-world data. I built the batch-processing workflow used to generate training-ready sequences, then ran multiple rounds of staged training and evaluation within the EgoRear framework while adapting components from EgoPoseFormer.
