@@ -5,16 +5,6 @@ import '@/styles/global.css';
 
 const research = [
   {
-    title: 'Humanoid Teleoperation and Motion Retargeting',
-    meta: 'UBTECH Robotics · 2025–2026',
-    summary:
-      'A modular system that unifies PICO, Xsens, and camera-based human motion for humanoid retargeting, replay, and robot deployment.',
-    href: '/work/humanoid-teleoperation',
-    media: '/projects/humanoid-teleoperation/pico-teleoperation.mp4',
-    mediaAlt: 'PICO teleoperation input and humanoid motion retargeting demonstration',
-    badge: 'Teleoperation',
-  },
-  {
     title: 'Egocentric Full-Body Pose Recovery',
     meta: 'HKU MMLab & Kinetix AI · 2026',
     summary:
@@ -24,9 +14,6 @@ const research = [
     mediaAlt: 'Predicted skeletons compared with projected ground truth on held-out fisheye views',
     badge: 'Human Motion Recovery',
   },
-];
-
-const projects = [
   {
     title: 'Self-Calibration for Resistive Insole Pressure Sensors',
     meta: 'Co-first author · IEEE RCAR 2025',
@@ -35,6 +22,7 @@ const projects = [
     href: '/work/insole-pressure-calibration',
     media: '/projects/insole-calibration/system-pipeline.png',
     mediaAlt: 'System pipeline for wearable sensing, reference acquisition, and calibration',
+    badge: 'Multi-Sensor Fusion',
   },
   {
     title: 'SWhegPro3 Wheel-Leg Transformable Robot',
@@ -44,6 +32,28 @@ const projects = [
     href: '/work/swhegpro3-wheel-leg-robot',
     media: '/projects/swhegpro3/platforms.png',
     mediaAlt: 'SWhegPro3 transformable wheel-leg robot platforms',
+    badge: 'Robot Design',
+  },
+];
+
+const projects = [
+  {
+    title: 'Humanoid Teleoperation and Motion Retargeting',
+    meta: 'UBTECH Robotics · 2025–2026',
+    summary:
+      'A modular system that unifies PICO, Xsens, and camera-based human motion for humanoid retargeting, replay, and robot deployment.',
+    href: '/work/humanoid-teleoperation',
+    media: '/projects/humanoid-teleoperation/pico-teleoperation.mp4',
+    mediaAlt: 'PICO teleoperation input and humanoid motion retargeting demonstration',
+  },
+  {
+    title: 'Persistent Object-Centric 3D Memory',
+    meta: 'Embodied AI course project · 2026',
+    summary:
+      'An RGB-D perception pipeline that combines geometry-based segmentation, SAM2 refinement, and world-frame 3D object representations for persistent scene memory.',
+    href: 'https://github.com/CrisWang6/persistent_object_memory',
+    media: '/projects/persistent-object-memory/scene-result.png',
+    mediaAlt: 'Geometry-based object segmentation, refined masks, and reconstructed 3D point cloud',
   },
 ];
 
@@ -148,16 +158,34 @@ const profileLinks = [
           projects.map((item) => (
             <article class="academic-work-item">
               <div class="academic-work-media">
-                <img src={item.media} alt={item.mediaAlt} loading="lazy" />
+                {item.media.endsWith('.mp4') ? (
+                  <video autoplay loop muted playsinline preload="auto" aria-label={item.mediaAlt}>
+                    <source src={item.media} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img src={item.media} alt={item.mediaAlt} loading="lazy" />
+                )}
               </div>
               <div class="academic-work-copy">
                 <h3>
-                  <a href={item.href}>{item.title}</a>
+                  <a
+                    href={item.href}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                  >
+                    {item.title}
+                  </a>
                 </h3>
                 <p class="academic-meta">{item.meta}</p>
                 <p class="academic-summary">{item.summary}</p>
                 <div class="academic-work-links">
-                  <a href={item.href}>Project details</a>
+                  <a
+                    href={item.href}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                  >
+                    {item.href.startsWith('http') ? 'View repository' : 'Project details'}
+                  </a>
                 </div>
               </div>
             </article>

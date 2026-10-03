@@ -407,7 +407,8 @@
 }
 
 .academic-work-media img[src$='model-predictions.jpg'],
-.academic-work-media img[src$='system-pipeline.png'] {
+.academic-work-media img[src$='system-pipeline.png'],
+.academic-work-media img[src$='scene-result.png'] {
   padding: 10px;
   background: #ffffff;
   object-fit: contain;
