@@ -2,15 +2,15 @@
 // and SEO defaults all read from here instead of hardcoding copy.
 export const SITE = {
   name: 'Haoran (Cris) Wang',
-  role: 'Robotics developer and mechanical engineering graduate student',
+  role: 'Robotics researcher and mechanical engineering graduate student',
   email: 'hwang359@jh.edu',
-  tagline: 'I build robotic systems that move between mechanical design, sensing, control, and embodied AI.',
+  tagline: 'Robot manipulation, robot learning, dexterous manipulation, and embodied AI.',
   description:
-    'Portfolio of Haoran Wang - robotics research, motion control, wearable sensing, vision-based pose estimation, and robot mechanism design.',
+    'Academic homepage of Haoran (Cris) Wang, a robotics researcher working on robot manipulation, robot learning, dexterous manipulation, and embodied AI.',
   status: 'M.S. Mechanical Engineering at Johns Hopkins University',
   social: [
     { label: 'GitHub', href: 'https://github.com/CrisWang6' },
-    { label: 'Website', href: 'https://criswang6.github.io/' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/haoran-wang-30180b383' },
   ],
   locale: 'en',
 } as const;

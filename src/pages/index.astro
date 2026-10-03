@@ -1,81 +1,207 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import Button from '@/components/Button.astro';
-import WorkRow from '@/components/WorkRow.astro';
-import SectionHeading from '@/components/SectionHeading.astro';
+import BaseHead from '@/components/BaseHead.astro';
 import { SITE } from '@/site.config';
+import '@/styles/global.css';
 
-const allWork = await getCollection('work', ({ data }) => !data.draft);
-const sorted = [...allWork].sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-const featured = sorted.filter((entry) => entry.data.featured);
-const rest = sorted.filter((entry) => !entry.data.featured);
-const selected = [...featured, ...rest].slice(0, 5);
+const research = [
+  {
+    title: 'PartInstruct',
+    meta: '',
+    summary: '',
+    href: '',
+    media: '',
+    mediaAlt: '',
+    badge: '',
+  },
+  {
+    title: 'Persistent Object-Centric 3D Memory',
+    meta: 'Embodied AI · 2026',
+    summary:
+      'An RGB-D perception pipeline that combines plane removal, point-cloud clustering, SAM2 mask refinement, and world-frame 3D centroids to maintain an object-centric scene representation.',
+    href: '',
+    media: '',
+    mediaAlt: '',
+    badge: '3D Perception',
+  },
+  {
+    title: 'Humanoid Teleoperation and Motion Retargeting',
+    meta: 'UBTECH Robotics · 2025–2026',
+    summary:
+      'A modular system that unifies PICO, Xsens, and camera-based human motion for humanoid retargeting, replay, and robot deployment.',
+    href: '/work/humanoid-teleoperation',
+    media: '/projects/humanoid-teleoperation/xsens-simulation.mp4',
+    mediaAlt: 'Xsens human motion retargeted to a humanoid robot in simulation',
+    badge: 'Robot Learning',
+  },
+  {
+    title: 'Egocentric Full-Body Pose Recovery',
+    meta: 'HKU MMLab & Kinetix AI · 2026',
+    summary:
+      'A synchronized wearable capture and multi-view reconstruction platform for learning full-body pose from head- and wrist-mounted fisheye cameras.',
+    href: '/work/full-body-pose-collection',
+    media: '/projects/full-body-pose/capture-system.jpg',
+    mediaAlt: 'Wearable and external camera capture system for egocentric full-body pose recovery',
+    badge: 'Embodied Perception',
+  },
+];
+
+const projects = [
+  {
+    title: 'Self-Calibration for Resistive Insole Pressure Sensors',
+    meta: 'Co-first author · IEEE RCAR 2025',
+    summary:
+      'An optimization-based calibration method for wearable pressure sensing that reduces vertical ground-reaction-force error.',
+    href: '/work/insole-pressure-calibration',
+    media: '/projects/insole-calibration/calibration-test.png',
+    mediaAlt: 'Pressure-sensing insole calibration system and force curves',
+  },
+  {
+    title: 'SWhegPro3 Wheel-Leg Transformable Robot',
+    meta: 'First author · IEEE ROBIO 2023',
+    summary:
+      'A four-module mobile robot with transformable three-impeller wheels for robust stair climbing across varied dimensions.',
+    href: '/work/swhegpro3-wheel-leg-robot',
+    media: '/projects/swhegpro3/platforms.png',
+    mediaAlt: 'SWhegPro3 transformable wheel-leg robot platforms',
+  },
+  {
+    title: 'Drawing Robot Based on the Gen3-lite Robot Arm',
+    meta: 'Robotic manipulation course project · 2024',
+    summary:
+      'A vision-guided drawing system that turns input graphics into end-effector trajectories on tilted work surfaces.',
+    href: '/work/gen3-lite-drawing-robot',
+    media: '/projects/drawing-arm/drawing-demo.png',
+    mediaAlt: 'Gen3-lite robot arm drawing on a tilted work surface',
+  },
+];
+
+const profileLinks = [
+  { label: 'GitHub', href: 'https://github.com/CrisWang6' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/haoran-wang-30180b383' },
+  { label: 'CV', href: '/cv' },
+];
 ---
 
-<BaseLayout title={SITE.name}>
-  <section class="mx-auto max-w-3xl px-6 pt-16 pb-20 sm:pt-24">
-    <p class="text-ink-soft mb-6 inline-flex items-center gap-2 font-mono text-xs">
-      <span class="bg-signal h-1.5 w-1.5 rounded-full" aria-hidden="true"></span>
-      {SITE.status}
-    </p>
+<!doctype html>
+<html lang={SITE.locale}>
+  <head>
+    <BaseHead title={SITE.name} description={SITE.description} image="/og-image.png" />
+  </head>
+  <body class="academic-page">
+    <main class="academic-shell">
+      <header class="academic-intro" aria-labelledby="page-title">
+        <div class="academic-intro-copy">
+          <p class="academic-kicker">Robotics Researcher</p>
+          <h1 id="page-title">Haoran <span>(Cris)</span> Wang</h1>
 
-    <h1 class="font-display text-ink max-w-2xl text-4xl leading-[1.1] font-medium sm:text-5xl">
-      {SITE.tagline}
-    </h1>
+          <p>
+            Hi, I am Haoran, an M.S. student in Mechanical Engineering at Johns Hopkins University.
+            I received my B.Eng. in Robotics Engineering from the Southern University of Science and
+            Technology.
+          </p>
 
-    <p class="text-ink-soft mt-6 max-w-xl">
-      {SITE.role} - currently connecting mechanism design, wearable sensing, robot motion
-      generation, and vision-based full-body pose recovery.
-    </p>
+          <!-- Add current JHU advisor and lab here once confirmed. -->
+          <p class="academic-focus">
+            My research focuses on <strong>robot manipulation</strong>, <strong
+              >robot learning</strong
+            >, <strong>dexterous manipulation</strong>, and <strong>embodied AI</strong>. I am
+            interested in building robots that can perceive, learn, and interact reliably in the
+            physical world.
+          </p>
 
-    <div class="mt-8 flex flex-wrap items-center gap-3">
-      <Button href="/work" variant="solid">View projects -></Button>
-      <Button href="/cv" variant="ghost">Read CV</Button>
-    </div>
-  </section>
-
-  <section id="work" class="mx-auto max-w-3xl px-6 pb-20">
-    <SectionHeading eyebrow="Selected projects" count={allWork.length} />
-    <div>
-      {selected.map((entry) => <WorkRow entry={entry} />)}
-    </div>
-    {
-      allWork.length > selected.length && (
-        <div class="mt-6">
-          <a
-            href="/work"
-            class="text-ink-soft hover:text-signal font-mono text-xs transition-colors"
-          >
-            View all {allWork.length} projects ->
-          </a>
+          <nav class="academic-profile-links" aria-label="Profile links">
+            {
+              profileLinks.map((link) => (
+                <a
+                  href={link.href}
+                  target={link.href.startsWith('http') ? '_blank' : undefined}
+                  rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+                >
+                  {link.label}
+                </a>
+              ))
+            }
+            <!-- Add Google Scholar here when a profile URL is available. -->
+          </nav>
         </div>
-      )
-    }
-  </section>
 
-  <section id="about" class="mx-auto max-w-3xl px-6 pb-20">
-    <SectionHeading eyebrow="About" />
-    <p class="text-ink-soft max-w-xl">
-      I am a mechanical engineering master's student at Johns Hopkins University, with
-      research experience across humanoid teleoperation, wearable sensing, wheel-leg
-      robots, and robotic manipulation.
-    </p>
-    <a href="/about" class="text-signal mt-4 inline-block font-mono text-xs hover:underline">
-      More about my background ->
-    </a>
-  </section>
+        <figure class="academic-portrait-frame" aria-label="Portrait placeholder">
+          <!-- Replace this placeholder with a portrait image in public/profile/. -->
+          <div class="academic-portrait-placeholder" aria-hidden="true"></div>
+        </figure>
+      </header>
 
-  <section id="contact" class="mx-auto max-w-3xl px-6 pb-24">
-    <SectionHeading eyebrow="Contact" />
-    <p class="font-display text-ink max-w-lg text-2xl sm:text-3xl">
-      Open to research collaboration, robotics internships, and project conversations.
-    </p>
-    <a
-      href={`mailto:${SITE.email}`}
-      class="text-signal mt-4 inline-flex items-center gap-2 font-mono hover:underline"
-    >
-      {SITE.email}
-    </a>
-  </section>
-</BaseLayout>
+      <section class="academic-work-section" aria-labelledby="research-title">
+        <div class="academic-section-heading">
+          <p class="academic-kicker">Selected work</p>
+          <h2 id="research-title">Research</h2>
+        </div>
+
+        {
+          research.map((item) => (
+            <article class="academic-work-item">
+              <div class:list={['academic-work-media', !item.media && 'is-placeholder']}>
+                {item.badge && <span class="academic-badge">{item.badge}</span>}
+                {item.media.endsWith('.mp4') ? (
+                  <video
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    preload="metadata"
+                    aria-label={item.mediaAlt}
+                  >
+                    <source src={item.media} type="video/mp4" />
+                  </video>
+                ) : item.media ? (
+                  <img src={item.media} alt={item.mediaAlt} loading="lazy" />
+                ) : null}
+              </div>
+              <div class="academic-work-copy">
+                <h3>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h3>
+                {item.meta && <p class="academic-meta">{item.meta}</p>}
+                {item.summary && <p class="academic-summary">{item.summary}</p>}
+                {item.href && (
+                  <div class="academic-work-links">
+                    <a href={item.href}>Project details</a>
+                  </div>
+                )}
+              </div>
+            </article>
+          ))
+        }
+      </section>
+
+      <section class="academic-work-section academic-projects" aria-labelledby="projects-title">
+        <div class="academic-section-heading">
+          <h2 id="projects-title">Projects</h2>
+        </div>
+
+        {
+          projects.map((item) => (
+            <article class="academic-work-item">
+              <div class="academic-work-media">
+                <img src={item.media} alt={item.mediaAlt} loading="lazy" />
+              </div>
+              <div class="academic-work-copy">
+                <h3>
+                  <a href={item.href}>{item.title}</a>
+                </h3>
+                <p class="academic-meta">{item.meta}</p>
+                <p class="academic-summary">{item.summary}</p>
+                <div class="academic-work-links">
+                  <a href={item.href}>Project details</a>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </section>
+
+      <footer class="academic-footer">
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        <p>© {new Date().getFullYear()} {SITE.name}</p>
+      </footer>
+    </main>
+  </body>
+</html>
