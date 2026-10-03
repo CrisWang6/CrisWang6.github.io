@@ -1,8 +1,9 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import Button from '@/components/Button.astro';
+import BaseHead from '@/components/BaseHead.astro';
+import { SITE } from '@/site.config';
 import { formatDate } from '@/utils/formatDate';
+import '@/styles/global.css';
 
 export async function getStaticPaths() {
   const entries = await getCollection('work', ({ data }) => !data.draft);
@@ -20,101 +21,100 @@ const { entry } = Astro.props;
 const { title, summary, role, date, tags, hero, heroVideo, heroAlt, heroSize, url, repo, links } =
   entry.data;
 const { Content } = await render(entry);
-
 const formattedDate = formatDate(date);
-const heroSizeClass = {
-  full: 'max-w-3xl',
-  content: 'max-w-2xl',
-  compact: 'max-w-[25rem]',
-}[heroSize];
 ---
 
-<BaseLayout title={title} description={summary} image={hero ?? ''}>
-  <article class="mx-auto max-w-3xl px-6 pt-16 pb-24 sm:pt-24">
-    <a href="/work" class="text-ink-soft hover:text-signal font-mono text-xs transition-colors">
-      &lt;- All projects
-    </a>
+<!doctype html>
+<html lang={SITE.locale}>
+  <head>
+    <BaseHead title={title} description={summary} image={hero ?? ''} />
+  </head>
+  <body class="academic-page">
+    <main class="academic-detail-shell">
+      <nav class="academic-detail-nav" aria-label="Project navigation">
+        <a class="academic-detail-name" href="/">Haoran (Cris) Wang</a>
+        <a href="/">Home</a>
+      </nav>
 
-    <h1 class="font-display text-ink mt-6 max-w-2xl text-3xl font-medium sm:text-4xl">
-      {title}
-    </h1>
+      <article class="academic-detail">
+        <header class="academic-detail-header">
+          <p class="academic-kicker">Selected work</p>
+          <h1>{title}</h1>
+          <p class="academic-detail-summary">{summary}</p>
 
-    <dl
-      class="border-line text-ink-soft mt-6 flex flex-wrap gap-x-8 gap-y-2 border-y py-4 font-mono text-xs"
-    >
-      <div><dt class="inline">Role - </dt><dd class="inline">{role}</dd></div>
-      <div><dt class="inline">Date - </dt><dd class="inline">{formattedDate}</dd></div>
-      {
-        tags.length > 0 && (
-          <div>
-            <dt class="inline">Stack — </dt>
-            <dd class="inline">{tags.join(', ')}</dd>
-          </div>
-        )
-      }
-    </dl>
+          <dl class="academic-detail-meta">
+            <div>
+              <dt>Role</dt>
+              <dd>{role}</dd>
+            </div>
+            <div>
+              <dt>Date</dt>
+              <dd><time datetime={date.toISOString()}>{formattedDate}</time></dd>
+            </div>
+            {
+              tags.length > 0 && (
+                <div>
+                  <dt>Topics</dt>
+                  <dd>{tags.join(' · ')}</dd>
+                </div>
+              )
+            }
+          </dl>
+        </header>
 
-    <p class="text-ink-soft mt-8 max-w-2xl text-lg leading-relaxed">{summary}</p>
+        {
+          hero && (
+            <figure class:list={['academic-detail-hero', `academic-detail-hero--${heroSize}`]}>
+              <img src={hero} alt={heroAlt ?? title} loading="eager" />
+            </figure>
+          )
+        }
+        {
+          heroVideo && (
+            <figure class="academic-detail-hero academic-detail-hero--video">
+              <video
+                src={heroVideo}
+                aria-label={heroAlt ?? title}
+                controls
+                muted
+                playsinline
+                preload="auto"
+              />
+            </figure>
+          )
+        }
 
-    {
-      hero && (
-        <figure
-          class:list={[
-            'border-line bg-surface mt-10 mx-auto overflow-hidden rounded-lg border',
-            heroSizeClass,
-          ]}
-        >
-          <img
-            src={hero}
-            alt={heroAlt ?? title}
-            class="block h-auto w-full object-contain"
-            loading="eager"
-          />
-        </figure>
-      )
-    }
-    {
-      heroVideo && (
-        <figure class="border-line bg-surface mt-10 overflow-hidden rounded-lg border">
-          <video
-            src={heroVideo}
-            aria-label={heroAlt ?? title}
-            class="block aspect-video w-full object-cover"
-            controls
-            muted
-            playsinline
-            preload="metadata"
-          />
-        </figure>
-      )
-    }
+        <div class="academic-detail-content prose">
+          <Content />
+        </div>
 
-    <div class="prose prose-sm sm:prose-base mt-12 max-w-2xl">
-      <Content />
-    </div>
+        {
+          (url || repo || links.length > 0) && (
+            <nav class="academic-detail-links" aria-label="Project links">
+              {url && (
+                <a href={url} target="_blank" rel="noreferrer">
+                  Visit live
+                </a>
+              )}
+              {repo && (
+                <a href={repo} target="_blank" rel="noreferrer">
+                  View source
+                </a>
+              )}
+              {links.map((link) => (
+                <a href={link.url} target="_blank" rel="noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          )
+        }
+      </article>
 
-    <div class="mt-10 flex flex-wrap gap-3">
-      {
-        url && (
-          <Button href={url} variant="solid">
-            Visit live →
-          </Button>
-        )
-      }
-      {
-        repo && (
-          <Button href={repo} variant="ghost">
-            View source
-          </Button>
-        )
-      }
-      {
-        links.map((link) => (
-          <Button href={link.url} variant="ghost">
-            {link.label}
-          </Button>
-        ))
-      }
-    </div>
-  </article>
-</BaseLayout>
+      <footer class="academic-footer">
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        <p>© {new Date().getFullYear()} {SITE.name}</p>
+      </footer>
+    </main>
+  </body>
+</html>

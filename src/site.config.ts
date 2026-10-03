@@ -4,9 +4,10 @@ export const SITE = {
   name: 'Haoran (Cris) Wang',
   role: 'Robotics researcher and mechanical engineering graduate student',
   email: 'hwang359@jh.edu',
-  tagline: 'Robot manipulation, robot learning, dexterous manipulation, and embodied AI.',
+  tagline:
+    'Human motion recovery, teleoperation, multi-sensor fusion, robot manipulation, and dexterous manipulation.',
   description:
-    'Academic homepage of Haoran (Cris) Wang, a robotics researcher working on robot manipulation, robot learning, dexterous manipulation, and embodied AI.',
+    'Academic homepage of Haoran (Cris) Wang, a robotics researcher working on human motion recovery, teleoperation, multi-sensor fusion, robot manipulation, and dexterous manipulation.',
   status: 'M.S. Mechanical Engineering at Johns Hopkins University',
   social: [
     { label: 'GitHub', href: 'https://github.com/CrisWang6' },
@@ -17,6 +18,6 @@ export const SITE = {
 
 export const NAV_LINKS = [
   { label: 'Projects', href: '/work' },
-  { label: 'CV', href: '/cv' },
+  { label: 'CV', href: '/Haoran-Wang-CV.pdf' },
   { label: 'About', href: '/about' },
 ] as const;

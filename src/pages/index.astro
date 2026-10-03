@@ -5,33 +5,14 @@ import '@/styles/global.css';
 
 const research = [
   {
-    title: 'PartInstruct',
-    meta: '',
-    summary: '',
-    href: '',
-    media: '',
-    mediaAlt: '',
-    badge: '',
-  },
-  {
-    title: 'Persistent Object-Centric 3D Memory',
-    meta: 'Embodied AI · 2026',
-    summary:
-      'An RGB-D perception pipeline that combines plane removal, point-cloud clustering, SAM2 mask refinement, and world-frame 3D centroids to maintain an object-centric scene representation.',
-    href: '',
-    media: '',
-    mediaAlt: '',
-    badge: '3D Perception',
-  },
-  {
     title: 'Humanoid Teleoperation and Motion Retargeting',
     meta: 'UBTECH Robotics · 2025–2026',
     summary:
       'A modular system that unifies PICO, Xsens, and camera-based human motion for humanoid retargeting, replay, and robot deployment.',
     href: '/work/humanoid-teleoperation',
-    media: '/projects/humanoid-teleoperation/xsens-simulation.mp4',
-    mediaAlt: 'Xsens human motion retargeted to a humanoid robot in simulation',
-    badge: 'Robot Learning',
+    media: '/projects/humanoid-teleoperation/pico-teleoperation.mp4',
+    mediaAlt: 'PICO teleoperation input and humanoid motion retargeting demonstration',
+    badge: 'Teleoperation',
   },
   {
     title: 'Egocentric Full-Body Pose Recovery',
@@ -39,9 +20,9 @@ const research = [
     summary:
       'A synchronized wearable capture and multi-view reconstruction platform for learning full-body pose from head- and wrist-mounted fisheye cameras.',
     href: '/work/full-body-pose-collection',
-    media: '/projects/full-body-pose/capture-system.jpg',
-    mediaAlt: 'Wearable and external camera capture system for egocentric full-body pose recovery',
-    badge: 'Embodied Perception',
+    media: '/projects/full-body-pose/model-predictions.jpg',
+    mediaAlt: 'Predicted skeletons compared with projected ground truth on held-out fisheye views',
+    badge: 'Human Motion Recovery',
   },
 ];
 
@@ -52,8 +33,8 @@ const projects = [
     summary:
       'An optimization-based calibration method for wearable pressure sensing that reduces vertical ground-reaction-force error.',
     href: '/work/insole-pressure-calibration',
-    media: '/projects/insole-calibration/calibration-test.png',
-    mediaAlt: 'Pressure-sensing insole calibration system and force curves',
+    media: '/projects/insole-calibration/system-pipeline.png',
+    mediaAlt: 'System pipeline for wearable sensing, reference acquisition, and calibration',
   },
   {
     title: 'SWhegPro3 Wheel-Leg Transformable Robot',
@@ -64,21 +45,12 @@ const projects = [
     media: '/projects/swhegpro3/platforms.png',
     mediaAlt: 'SWhegPro3 transformable wheel-leg robot platforms',
   },
-  {
-    title: 'Drawing Robot Based on the Gen3-lite Robot Arm',
-    meta: 'Robotic manipulation course project · 2024',
-    summary:
-      'A vision-guided drawing system that turns input graphics into end-effector trajectories on tilted work surfaces.',
-    href: '/work/gen3-lite-drawing-robot',
-    media: '/projects/drawing-arm/drawing-demo.png',
-    mediaAlt: 'Gen3-lite robot arm drawing on a tilted work surface',
-  },
 ];
 
 const profileLinks = [
   { label: 'GitHub', href: 'https://github.com/CrisWang6' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/haoran-wang-30180b383' },
-  { label: 'CV', href: '/cv' },
+  { label: 'CV', href: '/Haoran-Wang-CV.pdf' },
 ];
 ---
 
@@ -100,13 +72,12 @@ const profileLinks = [
             Technology.
           </p>
 
-          <!-- Add current JHU advisor and lab here once confirmed. -->
           <p class="academic-focus">
-            My research focuses on <strong>robot manipulation</strong>, <strong
-              >robot learning</strong
-            >, <strong>dexterous manipulation</strong>, and <strong>embodied AI</strong>. I am
-            interested in building robots that can perceive, learn, and interact reliably in the
-            physical world.
+            My research focuses on <strong>human motion recovery</strong>, <strong
+              >teleoperation</strong
+            >, and <strong>multi-sensor fusion</strong>. I am also interested in <strong
+              >robot manipulation</strong
+            > and <strong>dexterous manipulation</strong>.
           </p>
 
           <nav class="academic-profile-links" aria-label="Profile links">
@@ -125,9 +96,12 @@ const profileLinks = [
           </nav>
         </div>
 
-        <figure class="academic-portrait-frame" aria-label="Portrait placeholder">
-          <!-- Replace this placeholder with a portrait image in public/profile/. -->
-          <div class="academic-portrait-placeholder" aria-hidden="true"></div>
+        <figure class="academic-portrait-frame">
+          <img
+            class="academic-portrait"
+            src="/profile/haoran-wang.jpg"
+            alt="Portrait of Haoran (Cris) Wang"
+          />
         </figure>
       </header>
 
@@ -143,14 +117,7 @@ const profileLinks = [
               <div class:list={['academic-work-media', !item.media && 'is-placeholder']}>
                 {item.badge && <span class="academic-badge">{item.badge}</span>}
                 {item.media.endsWith('.mp4') ? (
-                  <video
-                    autoplay
-                    loop
-                    muted
-                    playsinline
-                    preload="metadata"
-                    aria-label={item.mediaAlt}
-                  >
+                  <video autoplay loop muted playsinline preload="auto" aria-label={item.mediaAlt}>
                     <source src={item.media} type="video/mp4" />
                   </video>
                 ) : item.media ? (

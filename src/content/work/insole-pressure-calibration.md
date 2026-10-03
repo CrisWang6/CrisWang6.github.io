@@ -4,8 +4,8 @@ summary: An optimization-based offline method that reduces vertical ground-react
 role: Undergraduate Researcher, HAR Lab; Co-first Author
 date: 2025-06-01
 tags: [Wearable Sensing, Optimization, Biomechanics, Python, MATLAB]
-hero: /projects/insole-calibration/calibration-test.png
-heroAlt: Insole calibration experiment on a force-measuring treadmill and force curves before and after calibration
+hero: /projects/insole-calibration/system-pipeline.png
+heroAlt: System pipeline for wearable sensing, reference acquisition, dataset processing, and model calibration
 heroSize: content
 links:
   - label: RCAR 2025 paper (PDF)
