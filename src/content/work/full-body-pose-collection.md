@@ -1,10 +1,10 @@
 ---
 title: Head-Wrist Egocentric Full-Body Pose Recovery System
 summary: An end-to-end platform for synchronized wearable capture, multi-view ground-truth reconstruction, and egocentric pose learning.
-role: Summer Researcher, HKU MMLab
+role: Research Assistant, HKU MMLab
 date: 2026-03-01
 tags: [Kalibr, RTMPose, Fisheye Camera, Multi-view Triangulation, PyTorch, SolidWorks]
-repo: https://github.com/CrisWang6/Head-Wrist-Full-Body-Pose-Recovery
+repo: https://github.com/CrisWang6/Egocentric-head-wrist-full-body-pose-recovery
 featured: true
 draft: false
 ---
@@ -16,7 +16,7 @@ I built an end-to-end research platform for egocentric full-body pose recovery, 
 ## End-to-end pipeline
 
 1. Design and calibrate the headband and wristband capture hardware.
-2. Record synchronized six- and nine-camera fisheye video together with head and wrist IMU streams.
+2. Record synchronized nine-camera fisheye video together with three head and wrist IMU streams.
 3. Recover high-quality external 2D and 3D human pose as ground truth from multi-view observations.
 4. Transform and project the reconstructed pose into the head-mounted fisheye camera coordinate system.
 5. Process aligned real-world sequences and train egocentric pose models in the EgoRear and EgoPoseFormer frameworks.
@@ -32,7 +32,7 @@ I iterated the headband and wristband through hardware generations. The mechanic
 
 ## My contribution
 
-- Designed the mechanical wearable system and assembled the camera, trigger, tag, rigid-body, and IMU electronics.
+- Independently designed and built the wearable system from mechanical structure to embedded integration, combining nine fisheye cameras, three IMUs, wrist-mounted modules, AprilTag-based localization, and hardware synchronization.
 - Iterated the headband and wristband through six hardware generations, making the camera-tag-rigid-body geometry repeatable and calibratable.
 - Built the synchronized video and inertial capture stack, including external triggering, timestamp alignment, H.265 recording, and Kalibr intrinsic and extrinsic calibration with the omni fisheye model.
 - Developed the multi-view ground-truth reconstruction pipeline and the projection from the external reference frame to each head-mounted camera.
@@ -41,7 +41,7 @@ I iterated the headband and wristband through hardware generations. The mechanic
 
 ## System design and synchronized capture
 
-The acquisition system combines DepthAI/OAK cameras with head and wrist IMUs. An external trigger starts all streams from a shared event, while per-frame timestamps support fine-grained temporal alignment across six- and nine-camera configurations. Camera intrinsics and inter-camera extrinsics are calibrated in Kalibr using an omni-directional fisheye model.
+The acquisition system combines nine DepthAI/OAK fisheye cameras with three head and wrist IMUs. An external trigger starts all streams from a shared event, while per-frame timestamps support fine-grained temporal alignment across the nine-camera configuration. Camera intrinsics and inter-camera extrinsics are calibrated in Kalibr using an omni-directional fisheye model.
 
 The wearable hardware was designed around a stable geometric chain between each camera, fiducial tag, and motion-capture rigid body. This makes calibration repeatable across recording sessions and allows the complete capture rig to be reconstructed in a common coordinate system.
 
@@ -82,7 +82,7 @@ I explored hand-pose perception from both inward-facing wrist cameras and head-m
 
 ## Real-world data and model training
 
-Across multiple capture batches, I collected approximately two hours of synchronized and aligned real-world data. I built the batch-processing workflow used to generate training-ready sequences, then ran multiple rounds of staged training and evaluation within the EgoRear framework while adapting components from EgoPoseFormer.
+Across multiple capture batches, I collected approximately 10 hours of synchronized real-world motion data. I built the batch-processing workflow used to generate training-ready sequences, then re-implemented and fine-tuned EgoRear's three-stage heatmap-based 3D pose pipeline, benchmarking against EgoPoseFormer and other egocentric methods. The reported real-world training used approximately 10 hours of data without large-scale synthetic-data pretraining.
 
 <figure class="project-media project-media--wide">
   <img src="/projects/full-body-pose/model-predictions.jpg" alt="Egocentric fisheye pose predictions compared with projected ground truth across multiple camera views" />
@@ -96,22 +96,24 @@ Across multiple capture batches, I collected approximately two hours of synchron
 
 ### 3D Pose Estimation
 
+The pipeline achieved **50.5 mm MPJPE on a held-out real-world test set**. This is approximately **11% below the 56.94 mm EgoRear reference result** listed below.
+
 | Method | Dataset and camera setup | MPJPE ↓ |
 | --- | --- | ---: |
-| **Our method** | Internally collected data, validation split | **50.5 mm** |
+| **Our method** | Internally collected data, held-out real-world test set | **50.5 mm** |
 | [EgoPoseFormer](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/07241.pdf) | SceneEgo, real-world monocular | 93.0 mm |
 | EgoPoseFormer | Ego4View-RW, two front cameras | 77.95 mm |
 | EgoPoseFormer | Ego4View-RW, two front and two rear cameras | 63.38 mm |
 | [EgoRear](https://arxiv.org/html/2503.11652v2) | Ego4View-RW, two front and two rear cameras | 56.94 mm |
 | EgoPoseFormer | UnrealEgo, synthetic stereo | 33.4 mm |
 
-Published results are included as literature references; datasets, camera configurations, skeleton definitions, and evaluation protocols differ.
+Published results are included as literature references; datasets, camera configurations, skeleton definitions, and evaluation protocols differ. The percentage above describes the numerical difference from the reference result, rather than a controlled comparison on the same benchmark.
 
 ## Simulation and supporting tools
 
 In parallel, I developed a simulation and validation environment using Isaac Sim and BlenderProc. The tooling compares Mahony-filtered head and wrist IMU orientation against optical motion capture, provides skeleton playback for debugging, and generates randomized synthetic motion from AMASS sequences and SMPL-X bodies.
 
-This environment supported geometry studies before hardware experiments and supplied large-scale pretraining data and simulation validation tools to a parallel project team.
+This environment supported geometry studies before hardware experiments and supplied synthetic-data generation and simulation validation tools to a parallel project team. The 50.5 mm real-world result reported above did not use large-scale synthetic-data pretraining.
 
 ## Technology
 

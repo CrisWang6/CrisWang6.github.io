@@ -23,11 +23,12 @@ The same downstream pipeline handles live inputs and recorded-session replay. Th
 ## My contribution
 
 - Extended the open-source General Motion Retargeting pipeline to generate large-scale robot motion trajectories for imitation learning.
+- Adapted the GMR-based whole-body pipeline using MINK differential inverse kinematics, tuning task weights and velocity/configuration regularization to improve tracking stability and reduce foot penetration and sliding.
 - Built a unified receiver, Redis transport, retargeting, replay, and ROS 2 publishing framework on top of TWIST2.
 - Integrated PICO and Xsens as real-time inputs, including timestamp-aware JSONL recording and offline replay.
 - Added Walker S2 joint mapping, optional ground-height correction, and shoulder-yaw offsets for robot-specific post-processing.
 - Prototyped an RGB/OAK camera input that converts PromptHMR SMPL-X predictions into the same retargeting interface.
-- Supported simulation-to-real validation on UBTECH's Walker S2 humanoid robot.
+- Deployed PICO and Xsens teleoperation on UBTECH's Walker S2 humanoid at approximately 300 ms end-to-end latency, and extended the framework to humanoid and wheeled dual-arm data collection.
 
 ## Pipeline
 
